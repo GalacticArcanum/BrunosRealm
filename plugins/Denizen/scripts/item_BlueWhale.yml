@@ -1,0 +1,12 @@
+BlueWhale:
+  type: item
+  debug: false
+  material: i@raw_fish
+  display name: '<&f>Blue Whale'
+  lore: 
+  - '<&b>The blue whale is a marine mammal'
+  - '<&b>belonging to the suborder of'
+  - '<&b>baleen whales.'
+  - '<&f>'
+  - '<&a>Length<&7>:<&6> <util.random.int[1].to[100]>'
+  - '<&a>Weight<&7>:<&6> <util.random.int[1].to[400000]>'

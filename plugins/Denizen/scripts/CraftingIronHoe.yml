@@ -1,0 +1,7 @@
+CraftingIronHoe:
+  type: world
+  debug: false
+  events:
+    on player crafts Iron_Hoe:
+    - narrate "<&3>You crafted a <&6>Bronze Zhangal!"
+    - determine i@BronzeZhangal

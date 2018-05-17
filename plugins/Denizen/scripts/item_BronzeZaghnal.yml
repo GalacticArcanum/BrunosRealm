@@ -1,0 +1,15 @@
+BronzeZaghnal:
+  type: item
+  debug: false
+  material: i@iron_hoe[unbreakable=true]
+  display name: '<&f>Bronze Zaghnal'
+  lore: 
+  - '<&b>A bronze scythe.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>Requires Class<&7>:<&6> Warrior'
+  - '<&4>Requires Class<&7>:<&6> Dark Knight'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Scythe'
+  - '<&2>Delay<&7>:<&6> 480'
+  - '<&2>Damage<&7>:<&6> 14'
+  shapeless_recipe: i@firecrystal|i@ashlumber|i@bronzeingot[quantity=2]|i@grasscloth

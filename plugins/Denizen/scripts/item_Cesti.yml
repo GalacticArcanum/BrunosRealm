@@ -1,0 +1,17 @@
+Cesti:
+  type: item
+  debug: false
+  material: i@shears[unbreakable=true]
+  display name: '<&f>Cesti'
+  lore: 
+  - '<&b>Wood blocks fashioned to be knuckles.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>Requires Class<&7>:<&6> Warrior, Paladin'
+  - '<&4>Requires Class<&7>:<&6> Red Mage, Monk'
+  - '<&4>Requires Class<&7>:<&6> Dark Knight, Thief'
+  - '<&4>Requires Class<&7>:<&6> Ranger'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Hand To Hand'
+  - '<&2>Delay<&7>:<&6> 48'
+  - '<&2>Damage<&7>:<&6> 1'
+  shapeless_recipe: i@earthcrystal|i@ashlumber|i@sheepleather[quantity=2]

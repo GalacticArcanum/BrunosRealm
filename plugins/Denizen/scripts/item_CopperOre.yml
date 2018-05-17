@@ -1,0 +1,8 @@
+CopperOre:
+  type: item
+  debug: false
+  material: i@iron_ore
+  display name: '<&f>Copper Ore'
+  lore: 
+  - '<&b>This ore contains the'
+  - '<&b>metal copper.'

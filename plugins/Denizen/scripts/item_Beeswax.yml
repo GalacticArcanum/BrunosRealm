@@ -1,0 +1,9 @@
+Beeswax:
+  type: item
+  debug: false
+  material: i@gold_ingot
+  display name: '<&f>Beeswax'
+  lore: 
+  - '<&b>This wax is made by melting'
+  - '<&b>down beehives.' 
+  shapeless_recipe: i@firecrystal|i@beehivechip[quantity=3]|i@distilledwater

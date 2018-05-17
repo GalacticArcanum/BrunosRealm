@@ -1,0 +1,55 @@
+Elevators:
+    type: world
+    debug: false
+    events:
+        on player enters elevator:
+        - playsound <player> sound:note_pling
+        - narrate "<&5>Hermes<&f> Select a floor by right clicking the number pad."
+        
+        on player exits elevator:
+        - playsound <player> sound:note_pling
+        
+        on player right clicks wall_sign in elevator:
+        - inventory open d:in@CUI_subwayelevator
+        
+        on player enters elevator2:
+        - playsound <player> sound:note_pling
+        - narrate "<&5>Hermes<&f> Select a floor by right clicking the number pad."
+        
+        on player exits elevator2:
+        - playsound <player> sound:note_pling
+        
+        on player right clicks wall_sign in elevator2:
+        - inventory open d:in@CUI_subwayelevator
+        
+#/ex note cu@-11704,74,3329,world|-11701,104,3333,world as:elevator_hospital        
+        on player enters elevator_hospital:
+        - playsound <player> sound:note_pling
+        - narrate "<&5>Hermes<&f> Select a floor by right clicking the number pad."
+        
+        on player exits elevator_hospital:
+        - playsound <player> sound:note_pling
+        
+        on player right clicks wall_sign in elevator_hospital:
+        - inventory open d:in@CUI_subwayelevator
+        
+        on player enters elevator_spawntower:
+        - playsound <player> sound:note_pling
+        - narrate "<&5>Hermes<&f> Select a floor by right clicking the number pad."
+        
+        on player exits elevator_spawntower:
+        - playsound <player> sound:note_pling
+        
+        on player right clicks wall_sign in elevator_spawntower:
+        - inventory open d:in@CUI_subwayelevator
+        
+        on player enters elevator_google_tower:
+        - playsound <player> sound:note_pling
+        - narrate "<&5>Hermes<&f> Select a floor by right clicking the number pad."
+        
+        on player exits elevator_google_tower:
+        - playsound <player> sound:note_pling
+        
+        on player right clicks wall_sign in elevator_google_tower:
+        - inventory open d:in@CUI_subwayelevator
+        

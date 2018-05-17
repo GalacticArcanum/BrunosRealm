@@ -1,0 +1,63 @@
+BronzeIngot:
+  type: item
+  debug: false
+  material: i@iron_ingot
+  display name: '<&f>Bronze Ingot'
+  no_id: true
+  lore: 
+  - '<&b>An ingot of smelted bronze.'
+  shapeless_recipe: i@firecrystal|i@beastcoin[quantity=4]
+BronzeIngot_alt_1:
+  type: item
+  debug: false
+  material: i@iron_ingot
+  display name: '<&f>Bronze Ingot'
+  no_id: true
+  lore: 
+  - '<&b>An ingot of smelted bronze.'
+  shapeless_recipe: i@firecrystal|i@copperore[quantity=3]|i@tinore
+BronzeIngot_alt_2:
+  type: item
+  debug: false
+  material: i@iron_ingot
+  display name: '<&f>Bronze Ingot'
+  no_id: true
+  lore: 
+  - '<&b>An ingot of smelted bronze.'
+  shapeless_recipe: i@firecrystal|i@bronzenugget[quantity=6]|i@tinore
+BronzeIngot_alt_3:
+  type: item
+  debug: false
+  material: i@iron_ingot
+  display name: '<&f>Bronze Ingot'
+  no_id: true
+  lore: 
+  - '<&b>An ingot of smelted bronze.'
+  shapeless_recipe: i@lightningcrystal|i@bronzecap
+BronzeIngot_alt_4:
+  type: item
+  debug: false
+  material: i@iron_ingot[quantity=2]
+  display name: '<&f>Bronze Ingot'
+  no_id: true
+  lore: 
+  - '<&b>An ingot of smelted bronze.'
+  shapeless_recipe: i@lightningcrystal|i@bronzeharness
+BronzeIngot_alt_5:
+  type: item
+  debug: false
+  material: i@iron_ingot
+  display name: '<&f>Bronze Ingot'
+  no_id: true
+  lore: 
+  - '<&b>An ingot of smelted bronze.'
+  shapeless_recipe: i@lightningcrystal|i@bronzesubligar
+BronzeIngot_alt_6:
+  type: item
+  debug: false
+  material: i@iron_ingot
+  display name: '<&f>Bronze Ingot'
+  no_id: true
+  lore: 
+  - '<&b>An ingot of smelted bronze.'
+  shapeless_recipe: i@lightningcrystal|i@bronzeleggings

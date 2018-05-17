@@ -1,0 +1,40 @@
+NVG:
+  type: item
+  debug: false
+  material: i@chainmail_helmet
+  display name: '<&6><&l>Night Vision Goggles'
+  lore: 
+  - '<&e>Inscribed on the side is <&4>4<&e>e<&2>2<&9>9<&e>' 
+  - '<&6><&l>Legendary<&e> Item Rewarded'
+  - '<&e>To All Master Builders'
+  recipe: 
+  - i@ink_sack,15|i@redstone_block|i@ink_sack,1
+  - i@glass|i@chainmail_helmet|i@glass
+  - i@ink_sack,2|i@quartz|i@ink_sack,4
+NVG_Listen:
+  type: world
+  debug: false
+  events:
+    on player equips helmet:
+    - define armor <context.armor>
+    - if <def[armor].simple> == i@NVG {
+      - cast night_vision <player> duration:23h hide_particles
+      }
+NVG_OFF_LISTEN:
+  type: world
+  debug: false
+  events:
+    on player unequips helmet:
+    - define armor_off <context.armor>
+    - if <def[armor_off].simple> == i@NVG {
+      - adjust <player> remove_effects
+      }
+NVG_Craft_listen:
+  type: world
+  debug: false
+  events:
+    on player crafts NVG:
+    - if !<player.has_permission[bruno.builder]> {
+      - narrate '<red>You must be a Builder for that item, pal.'
+      - determine cancelled
+      }

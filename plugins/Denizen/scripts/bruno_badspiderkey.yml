@@ -1,0 +1,28 @@
+badspiderkey:
+    type: world
+    debug: false
+    events:
+        on player enters badspiderkey:
+        - narrate "The 1st number of the code is <server.flag[code].split[].get[1]>"
+
+badspiderkey2:
+    type: world
+    debug: false
+    events:
+        on player enters badspiderkey2:
+        - narrate "The 2nd number of the code is <server.flag[code].split[].get[2]>"
+
+badspiderkey3:
+    type: world
+    debug: false
+    events:
+        on player enters badspiderkey3:
+        - narrate "The 3rd number of the code is <server.flag[code].split[].get[3]>"
+        
+jonsnobossroom:
+    type: world
+    debug: false
+    events:
+        on player enters jonsnobossroom:
+        - spawn e@skeleton[skeleton=wither] l@-817,20,-229,world
+        - spawn e@skeleton[skeleton=wither] l@-798,21,-230,world

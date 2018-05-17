@@ -1,0 +1,84 @@
+AshClub:
+  type: item
+  debug: false
+  material: i@wood_spade[unbreakable=true]
+  display name: '<&f>Ash Club'
+  lore: 
+  - '<&b>A club made of ash lumber.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>No Class Requirement'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Club'
+  - '<&2>Delay<&7>:<&6> 264'
+  - '<&2>Damage<&7>:<&6> 4'
+  shapeless_recipe: i@windcrystal|i@ashlumber
+AshClub_alt_1:
+  type: item
+  debug: false
+  material: i@wood_spade[unbreakable=true]
+  display name: '<&f>Ash Club'
+  lore: 
+  - '<&b>A club made of ash lumber.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>No Class Requirement'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Club'
+  - '<&2>Delay<&7>:<&6> 264'
+  - '<&2>Damage<&7>:<&6> 4'
+  shapeless_recipe: i@stick|i@stick|i@oak_planks
+AshClub_alt_2:
+  type: item
+  debug: false
+  material: i@wood_spade[unbreakable=true]
+  display name: '<&f>Ash Club'
+  lore: 
+  - '<&b>A club made of ash lumber.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>No Class Requirement'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Club'
+  - '<&2>Delay<&7>:<&6> 264'
+  - '<&2>Damage<&7>:<&6> 4'
+  shapeless_recipe: i@stick|i@stick|i@birch_planks
+AshClub_alt_3:
+  type: item
+  debug: false
+  material: i@wood_spade[unbreakable=true]
+  display name: '<&f>Ash Club'
+  lore: 
+  - '<&b>A club made of ash lumber.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>No Class Requirement'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Club'
+  - '<&2>Delay<&7>:<&6> 264'
+  - '<&2>Damage<&7>:<&6> 4'
+  shapeless_recipe: i@stick|i@stick|i@darkoak_planks
+AshClub_alt_4:
+  type: item
+  debug: false
+  material: i@wood_spade[unbreakable=true]
+  display name: '<&f>Ash Club'
+  lore: 
+  - '<&b>A club made of ash lumber.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>No Class Requirement'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Club'
+  - '<&2>Delay<&7>:<&6> 264'
+  - '<&2>Damage<&7>:<&6> 4'
+  shapeless_recipe: i@stick|i@stick|i@spruce_planks
+AshClub_alt_5:
+  type: item
+  debug: false
+  material: i@wood_spade[unbreakable=true]
+  display name: '<&f>Ash Club'
+  lore: 
+  - '<&b>A club made of ash lumber.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>No Class Requirement'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Club'
+  - '<&2>Delay<&7>:<&6> 264'
+  - '<&2>Damage<&7>:<&6> 4'
+  shapeless_recipe: i@stick|i@stick|i@acacia_planks

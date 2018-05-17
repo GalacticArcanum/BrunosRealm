@@ -1,0 +1,11 @@
+#/ex note cu@-16839,74,18458,world|-16836,79,18461,world as:WarlordsCapitalPad
+#/ex note cu@-6142,68,-355,world|-6140,70,-353,world as:WarlordsOutpostPad
+WarlordsCapitalPad:
+    type: world
+    debug: false
+    events:
+        on player enters WarlordsCapitalPad:
+        - execute as_op 'warp Warlords <player.name>'
+        
+        on player enters WarlordsOutpostPad:
+        - execute as_op 'warp WarlordsCapital <player.name>'

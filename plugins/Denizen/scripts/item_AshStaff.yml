@@ -1,0 +1,16 @@
+AshStaff:
+  type: item
+  debug: false
+  material: i@wood_spade[unbreakable=true]
+  display name: '<&f>Ash Staff'
+  lore: 
+  - '<&b>A staff made of ash lumber.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>Requires Class<&7>:<&6> Warrior, Red Mage'
+  - '<&4>Requires Class<&7>:<&6> White Mage, Monk'
+  - '<&4>Requires Class<&7>:<&6> Black Mage'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Staff'
+  - '<&2>Delay<&7>:<&6> 366'
+  - '<&2>Damage<&7>:<&6> 5'
+  shapeless_recipe: i@windcrystal|i@ashlumber|i@batfang

@@ -1,0 +1,11 @@
+HareMeat:
+  type: item
+  debug: false
+  material: i@rabbit
+  display name: '<&f>Hare Meat'
+  lore: 
+  - '<&b>This slice of hare meat is from a'
+  - '<&b>small wild rabbit.'
+  - '<&f>'
+  - '<&2>Food Effects<&7>:<&6> STR +1 5 minutes'
+  - '<&2>Food Effects<&7>:<&6> INT -3 5 minutes'

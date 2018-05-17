@@ -1,0 +1,20 @@
+Circlet:
+  type: item
+  debug: false
+  material: i@leather_helmet[unbreakable=true;nbt_attributes=li@generic.armor/head/0/0]
+  display name: '<&f>Circlet'
+  no_id: true
+  lore: 
+  - '<&b>A headband made of copper and brass.' 
+  - '<&f>'
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>Requires Class<&7>:<&6> White Mage, Monk'
+  - '<&4>Requires Class<&7>:<&6> Red Mage, Thief'
+  - '<&4>Requires Class<&7>:<&6> Black Mage, Ranger'
+  - '<&4>Requires Class<&7>:<&6> Dark Knight'
+  - '<&f>'
+  - '<&2>Armor Rarity<&7>:<&f> Common'
+  - '<&2>Armor Set<&7>:<&6> Robe'
+  - '<&2>Armor Type<&7>:<&6> Head'
+  - '<&2>Defense<&7>:<&6> 1'
+  shapeless_recipe: i@firecrystal|i@copperingot|i@brassingot

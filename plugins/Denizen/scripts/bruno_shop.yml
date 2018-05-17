@@ -1,0 +1,72 @@
+shop:
+  type: command
+  name: shop
+  usage: "/shop"
+  description: Shop Menu
+  debug: false
+  permission: bruno.gms
+  permission message: <&5>Zeus<&f> Talk to the boss, you can't use this command.
+  script:
+    - choose <player.gamemode>:
+        - case SURVIVAL:
+          - inventory open d:in@CUI_shop
+        - case CREATIVE:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear
+        - case ADVENTURE:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear
+        - case SPECTATOR:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear
+        - default:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear
+sell:
+  type: command
+  name: sell
+  usage: "/sell"
+  description: Sell Menu
+  debug: false
+  permission: bruno.gms
+  permission message: <&5>Zeus<&f> Talk to the boss, you can't use this command.
+  script:
+    - choose <player.gamemode>:
+        - case CREATIVE:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear
+        - case ADVENTURE:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear
+        - case SPECTATOR:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear
+buy:
+  type: command
+  name: buy
+  usage: "/buy"
+  description: Buy Menu
+  debug: false
+  permission: bruno.gms
+  permission message: <&5>Zeus<&f> Talk to the boss, you can't use this command.
+  script:
+    - choose <player.gamemode>:
+        - case CREATIVE:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear
+        - case ADVENTURE:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear
+        - case SPECTATOR:
+          - narrate "<&5>Hermes<&f> You must be in survival mode."
+          - determine fulfilled passively
+          - queue clear

@@ -1,0 +1,7 @@
+LizardSkin:
+  type: item
+  debug: false
+  material: i@rabbit_hide
+  display name: '<&f>Lizard Skin'
+  lore: 
+  - '<&b>A thick lizard skin.'

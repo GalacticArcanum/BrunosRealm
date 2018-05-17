@@ -1,0 +1,7 @@
+AshLog:
+  type: item
+  debug: false
+  material: i@spruce_log
+  display name: '<&f>Ash Log'
+  lore: 
+  - '<&b>A rough cut log of ash timber.'

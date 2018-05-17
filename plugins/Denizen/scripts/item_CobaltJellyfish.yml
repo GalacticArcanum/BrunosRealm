@@ -1,0 +1,11 @@
+CobaltJellyfish:
+  type: item
+  debug: false
+  material: i@raw_pufferfish
+  display name: '<&f>Cobalt Jellyfish'
+  lore: 
+  - '<&b>This jellyfish lives in the'
+  - '<&b>seas of the Brunoverse.'
+  - '<&f>'
+  - '<&a>Length<&7>:<&6> <util.random.int[1].to[120]>'
+  - '<&a>Weight<&7>:<&6> <util.random.int[1].to[440]>'

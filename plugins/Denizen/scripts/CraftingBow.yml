@@ -1,0 +1,7 @@
+CraftingBow:
+  type: world
+  debug: false
+  events:
+    on player crafts bow:
+    - narrate "<&3>You crafted a <&6>Shortbow!"
+    - determine i@Shortbow

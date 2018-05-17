@@ -1,0 +1,9 @@
+GrassCloth:
+  type: item
+  debug: false
+  material: i@green_carpet
+  display name: '<&f>Grass Cloth'
+  no_id: true
+  lore: 
+  - '<&b>Cloth woven from grass fiber thread.'
+  shapeless_recipe: i@earthcrystal|i@grassthread[quantity=3]

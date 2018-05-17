@@ -1,0 +1,12 @@
+tardis_door:
+  type: world
+  debug: false
+  events:
+    on player enters tardis_door:
+    - if <player.has_permission[griefprevention.softmute]> {
+      - execute as_op "warp tardis"
+      }
+    on player enters tardis_exit:
+    - if <player.has_permission[griefprevention.softmute]> {
+      - execute as_op "warp tardisdoor"
+      }

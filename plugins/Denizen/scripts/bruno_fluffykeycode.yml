@@ -1,0 +1,8 @@
+fluffykeycode:
+    type: world
+    debug: false
+    events:
+        on player enters fluffykeycode:
+        - narrate "Please enter the keycode to open the door."
+        - wait 1t
+        - inventory open d:in@code_keypad

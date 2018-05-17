@@ -1,0 +1,7 @@
+max_health_20:
+  type: task
+  debug: true
+  script:
+    - define player <player>
+    - adjust <def[player]> max_health:20
+    - announce to_ops "<&5>Hermes<&f> <def[player].name> Max Health is <def[player].health.max>."

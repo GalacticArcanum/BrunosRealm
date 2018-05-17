@@ -1,0 +1,44 @@
+BronzeLeggings:
+  type: item
+  debug: false
+  material: i@leather_boots[unbreakable=true;nbt_attributes=li@generic.armor/feet/0/0]
+  display name: '<&f>Bronze Leggings'
+  no_id: true
+  lore: 
+  - '<&b>A pair of leggings made of bronze' 
+  - '<&b>and sheep leather.'
+  - '<&f>'
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>Requires Class<&7>:<&6> Warrior, Monk'
+  - '<&4>Requires Class<&7>:<&6> Red Mage, Thief'
+  - '<&4>Requires Class<&7>:<&6> Paladin, Samurai'
+  - '<&4>Requires Class<&7>:<&6> Dragoon, Ninja'
+  - '<&4>Requires Class<&7>:<&6> Dark Knight'
+  - '<&f>'
+  - '<&2>Armor Rarity<&7>:<&f> Common'
+  - '<&2>Armor Set<&7>:<&6> BronzeHarness'
+  - '<&2>Armor Type<&7>:<&6> Feet'
+  - '<&2>Defense<&7>:<&6> 2'
+  shapeless_recipe: i@earthcrystal|i@bronzesheet[quantity=2]|i@sheepleather[quantity=2]
+BronzeLeggings_alt_1:
+  type: item
+  debug: false
+  material: i@leather_boots[unbreakable=true;nbt_attributes=li@generic.armor/feet/0/0]
+  display name: '<&f>Bronze Leggings'
+  no_id: true
+  lore: 
+  - '<&b>A pair of leggings made of bronze' 
+  - '<&b>and sheep leather.'
+  - '<&f>'
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>Requires Class<&7>:<&6> Warrior, Monk'
+  - '<&4>Requires Class<&7>:<&6> Red Mage, Thief'
+  - '<&4>Requires Class<&7>:<&6> Paladin, Samurai'
+  - '<&4>Requires Class<&7>:<&6> Dragoon, Ninja'
+  - '<&4>Requires Class<&7>:<&6> Dark Knight'
+  - '<&f>'
+  - '<&2>Armor Rarity<&7>:<&f> Common'
+  - '<&2>Armor Set<&7>:<&6> BronzeHarness'
+  - '<&2>Armor Type<&7>:<&6> Feet'
+  - '<&2>Defense<&7>:<&6> 2'
+  shapeless_recipe: i@lightcrystal|i@rustyleggings

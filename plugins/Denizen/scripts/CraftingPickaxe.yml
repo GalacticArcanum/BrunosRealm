@@ -1,0 +1,7 @@
+CraftingPickaxe:
+  type: world
+  debug: false
+  events:
+    on player crafts iron_pickaxe:
+    - narrate "<&3>You crafted a <&6>Butterfly Axe!"
+    - determine i@ButterflyAxe

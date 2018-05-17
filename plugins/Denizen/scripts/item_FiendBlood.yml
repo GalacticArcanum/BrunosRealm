@@ -1,0 +1,8 @@
+FiendBlood:
+  type: item
+  debug: false
+  material: i@dragons_breath
+  display name: '<&f>Fiend Blood'
+  lore: 
+  - '<&b>This blood appears to have come'
+  - '<&b>from a monstrous fiend.'

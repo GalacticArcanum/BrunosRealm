@@ -1,0 +1,49 @@
+openworld:
+  type: command
+  debug: false
+  name: openworld
+  description: Brunos Open World Command
+  usage: "/openworld [worldname]"
+  permission: bruno.owner
+  permission message: <&5>Zeus<&f> Sorry, <player.name>, you don't have permission to manipulate worlds.
+  allowed help:
+  - determine <player.has_permission[bruno.owner]||player.is_op>
+  script:
+    - define world_name <c.args.get[1]>
+    - inventory close
+    - choose <server.list_worlds.formatted.contains[%world_name%]>:
+      - case true:
+        - teleport <player> <w@%world_name%.spawn_location>
+        - narrate "<&5>Hermes<&f> Welcome to %world_name%"
+      - case false:
+        - narrate "<&5>Hermes<&f> Wait 15 seconds while we bring back up the warp drives..."
+        - createworld %world_name%
+        - wait 15s
+        - execute as_server 'pex world %world_name% inherit world'
+        - wait 1t
+        - gamerule <def[world_name]> keepInventory true
+        - teleport <player> <w@%world_name%.spawn_location>
+        - narrate "<&5>Hermes<&f> Welcome to %world_name%"
+      - default:
+        - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over...."
+closeworld:
+  type: command
+  debug: true
+  name: closeworld
+  description: Brunos Close World Command
+  usage: "/closeworld [worldname]"
+  permission: bruno.owner
+  permission message: <&5>Zeus<&f> Sorry, <player.name>, you don't have permission to manipulate worlds.
+  allowed help:
+  - determine <player.has_permission[bruno.owner]||player.is_op>
+  script:
+    - define world_name <c.args.get[1]>
+    - inventory close
+    - choose <server.list_worlds.formatted.contains[%world_name%]>:
+      - case true:
+        - adjust <w@%world_name%> unload
+        - narrate "<&5>Hermes<&f> %world_name% unloaded"
+      - case false:
+        - narrate "<&5>Hermes<&f> That world is not loaded."
+      - default:
+        - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over...."

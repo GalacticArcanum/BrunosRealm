@@ -1,0 +1,7 @@
+MapleLog:
+  type: item
+  debug: false
+  material: i@spruce_log
+  display name: '<&f>Maple Log'
+  lore: 
+  - '<&b>A rough cut log of maple timber.'

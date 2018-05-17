@@ -1,0 +1,7 @@
+BoneChip:
+  type: item
+  debug: false
+  material: i@bone_meal
+  display name: '<&f>Bone Chip'
+  lore: 
+  - '<&b>A fragment of bone.'

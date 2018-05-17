@@ -1,0 +1,262 @@
+CUICommand:
+  type: command
+  debug: false
+  name: cui
+  permission: dCustom.cui
+  permission message: "<red>Permission needed, <dark_red><permission><red>."
+  usage: "/cui create/edit/open/delete [name]"
+  aliases:
+  - ChestUserInterface
+  - CreateUserInterface
+  tab complete:
+  - if <c.args.size.is[LESS].to[1]> determine create|edit|open|delete
+  manage:
+  - if <c.args.size.is[OR_LESS].to[1]> {
+    - narrate "<red>Missing [name] for inventory."
+    } else {
+    - if <li@edit|edittype|editconfirm|deleteconfirm.contains[<c.args.get[2]>]> queue clear
+    - define name "<c.raw_args.after[<c.args.get[1]><&sp>].replace[<&sp>].with[_]>"
+    - run locally <c.args.get[1]> "def:<c.raw_args.after[<c.args.get[1]><&sp>].replace[<&sp>].with[_]>" }
+  script:
+  - if <c.args.size.is[OR_LESS].to[0]> {
+    - narrate "<script.yaml_key[usage]>"
+    - queue clear }
+  - if <player.has_flag[cuititle]> {
+    - flag player cuititle:!
+    - define name <player.flag[cuiedit]>
+    - yaml id:<player>cui load:scripts\interface\<def[name]>.yml
+    - yaml id:<player>cui set "CUI_<def[name]>.title:<parse:<c.raw_args.substring[1,32]>>"
+    - inject CUIYamlSave
+    - inventory open d:in@cui_<player.flag[cuiedit]>
+    - queue clear }
+  - choose <c.args.get[1]>:
+    - case create:
+      - inject locally manage
+    - case edit:
+      - flag player cuiedit:<c.args.get[2]>
+      - inject locally manage
+    - case delete:
+      - inject locally manage
+    - case open:
+      - inject locally manage
+    - case help:
+      - narrate "<script.yaml_key[usage]>"
+    - default:
+      - narrate "<script.yaml_key[usage]>"
+  open:
+  - inventory open d:in@cui_<def[1]>
+  layout:
+  - "CUI_<def[name]>:"
+  - "  type: inventory"
+  - "  debug: false"
+  - "  inventory: CHEST"
+  - "  title: CUI Interface"
+  - "  size: 9"
+  - "  slots:"
+  - "  - '[] [] [] [] [] [] [] [] []'"
+  create:
+  - if <server.has_file[scripts\interface\<def[1]>.yml]> queue clear
+  - define name <def[1]>
+  - log "<parse:<script.yaml_key[layout].after[li@].replace[|].with[<&nl>]>>" type:none file:plugins/Denizen/scripts/interface/<def[name]>.yml
+  - yaml id:<player>cui load:scripts\interface\<def[name]>.yml
+  - yaml id:<player>cui set "CUI_<def[name]>.slots:->:<def[slots]>"
+  - inject cuiyamlsave
+  - execute as_player "denizen reload scripts" silent
+  - narrate "<green>Inventory Created, scripts saved to \scripts\interface folder!"
+  delete:
+  - flag player cuidelete:<def[1]>
+  - inventory open d:in@cui_deleteconfirm
+  edit:
+  - if <server.has_file[scripts\interface\<def[1]>.yml].not> narrate "<red>Inventory <def[1]> not found."
+    else inventory open d:in@cui_edit
+
+CUIListener:
+  type: world
+  debug: false
+  events:
+    on player closes inventory:
+    - if <player.has_flag[cuislots].not> queue clear
+    - flag player cuislots:!
+    - define name <player.flag[cuiedit]>
+    - define slots "<&lb><&rb>"
+    - define scripts "li@"
+    - repeat <el@val[in@cui_<def[name]>].as_inventory.size.sub[1]> { - define slots "<def[slots]> <&lb><&rb>" }
+    - yaml id:<player>cui load:scripts\interface\<def[name]>.yml
+    - define save <yaml[<player>cui].list_keys[cui_<def[name]>.scripts]>
+    - foreach <c.inventory.list_contents> {
+      - if <def[value].is[!=].to[i@air]> && <def[save].as_list.contains[<def[loop_index]>].not> define scripts "<def[scripts]><&pipe><def[loop_index]>"
+      - define slots <def[slots].replace[firstregex:\<&lb>\<&rb>].with[<&lb><def[value].unescaped><&rb>]> }
+    - yaml id:<player>cui set "CUI_<def[name]>.slots:!"
+    - yaml id:<player>cui set "CUI_<def[name]>.slots:->:<def[slots]>"
+    - foreach <def[scripts].remove[1]> { - yaml id:<player>cui set "CUI_<def[name]>.scripts.<def[value]>.left:->:Narrate Script_Goes_Here" }
+    - inject CUIYamlSave
+    
+    on player clicks in inventory:
+    - if <el@val[<c.inventory>].contains[in@CUI_].not> queue clear
+    - run CUI_<c.inventory.after[in@cui_]> path:scripts.<c.raw_slot>.left def:<c.item>
+    #- if <server.list_scripts.contains[s@TASK_CUI_<c.inventory.after[in@cui_]>_<c.raw_slot>]> run TASK_CUI_<c.inventory.after[in@cui_]>_<c.raw_slot> def:<c.item>
+    #  else narrate "<aqua>server does not contain script, <blue>TASK_CUI_<c.inventory.after[in@cui_]>_<c.raw_slot>"
+    - determine cancelled
+
+CUIEditSlots:
+  type: task
+  debug: false
+  script:
+  - flag player cuiedit:<def[1]>
+  - define inv in@cui_<def[1]>
+  - inventory close
+  - flag player cuislots
+  - inventory open "d:in@generic[size=<def[inv].as_inventory.size>;title=Editing <def[1]>;contents=<def[inv].as_inventory.list_contents>]"
+
+CUIYamlSave:
+  type: task
+  debug: false
+  script:
+  - yaml id:<player>cui savefile:scripts\interface\<def[name]>.yml
+  - yaml id:<player>cui unload
+  - execute as_op "denizen reload scripts" silent
+  - narrate "<aqua>Updated <def[name]>"
+
+CUI_edit:
+  slots:
+  - '[i@air] [i@air] [i@name_tag[display_name=<aqua>Title]] [i@air] [i@chest[display_name=<aqua>Contents]]
+    [i@air] [i@anvil[display_name=<aqua>Type/Size]] [] []'
+  debug: false
+  size: '9'
+  type: inventory
+  inventory: CHEST
+  title: CUI Manager
+  scripts:
+    '3':
+      left:
+      - flag player cuititle duration:1m
+      - narrate "<aqua>Type <yellow>/cui <gold>[title you want] <aqua>Within 1 minute."
+      - narrate " <aqua>Only use letters, numbers, and spaces."
+      - inventory close
+    '5':
+      left:
+      - run cuieditslots def:<player.flag[cuiedit]>
+    '7':
+      left:
+      - inventory open d:in@cui_edittype
+      - narrate <player.flag[cuiedit]>
+
+CUI_deleteconfirm:
+  slots:
+  - '[i@air] [i@air] [i@green_clay[display_name=<aqua>Confirm;lore=<red>This will DELETE|<red>the
+    inventory.]] [i@air] [i@air] [i@air] [i@red_clay[display_name=<aqua>Cancel;lore=<aqua>No
+    changes|<aqua>will be made.]] [] []'
+  debug: 'false'
+  size: '9'
+  type: inventory
+  inventory: CHEST
+  title: Delete CUI?
+  scripts:
+    '3':
+      left:
+      - define name <player.flag[cuidelete]>
+      - if <server.has_file[scripts\interface\<def[name]>.yml]> adjust <server> delete_file:scripts\interface\<def[name]>.yml
+        else narrate "<red>Inventory <def[name]> not found."
+      - execute as_player "Denizen reload scripts" silent
+      - narrate "<aqua>Inventory <def[name]> deleted."
+      - flag player cuidelete:!
+    '7':
+      left:
+      - inventory open d:in@cui_edit
+
+CUI_editconfirm:
+  slots:
+  - '[i@air] [i@air] [i@green_clay[display_name=<aqua>Confirm;lore=<red>This will DELETE|<red>the
+    contents of|<red>the inventory.]] [i@air] [i@air] [i@air] [i@red_clay[display_name=<aqua>Cancel;lore=<aqua>No
+    changes|<aqua>will be made.]] [] []'
+  debug: 'false'
+  size: '9'
+  type: inventory
+  inventory: CHEST
+  title: Change type/size?
+  update:
+  - define name <player.flag[cuiedit]>
+  - ~yaml id:<player>cui load:scripts\interface\<def[name]>.yml
+  - yaml id:<player>cui set cui_<def[name]>.size:<player.flag[cuiconfirm].get[1]>
+  - yaml id:<player>cui set cui_<def[name]>.slots:!
+  - yaml id:<player>cui set cui_<def[name]>.slots:->:<player.flag[cuiconfirm].get[2]>
+  - inject CUIYamlSave instantly
+  - inventory open d:in@cui_edit
+  - flag player cuiconfirm:!
+  scripts:
+    '3':
+      left:
+      - Narrate <player.flag[cuiconfirm].get[1]><red><player.flag[cuiconfirm].get[2]>
+      - inject locally update
+    '7':
+      left:
+      - inventory open d:in@cui_edit
+
+CUI_edittype:
+  slots:
+  - '[i@chest[display_name=<aqua>1 Row;lore=A 1x9 interface]] [i@chest[display_name=<aqua>2
+    Rows;lore=A 2x9 interface;quantity=2]] [i@chest[display_name=<aqua>3 Rows;lore=A 3x9
+    interface;quantity=3]] [i@chest[display_name=<aqua>4 Rows;lore=A 4x9 interface;quantity=4]]
+    [i@chest[display_name=<aqua>5 Rows;lore=A 5x9 interface;quantity=5]] [i@chest[display_name=<aqua>6
+    Rows;lore=A 6x9 interface;quantity=6]] [i@ender_chest[display_name=<red>7 Rows;lore=<red>This
+    is a bug.|<red>Use with caution.;quantity=7]] [i@ender_chest[display_name=<red>8 Rows;lore=<red>This
+    is a bug.|<red>Use with caution.;quantity=8]] [i@ender_chest[display_name=<red>9 Rows;lore=<red>This
+    is a bug.|<red>Use with caution.;quantity=9]] [i@hopper[display_name=<aqua>Hopper;lore=A
+    1x5 interface]] [i@air] [i@dispenser[display_name=<aqua>Dispencer;lore=A 3x3 interface|<red>NOT IMPLEMENTED]]
+    [i@air] [i@workbench[display_name=<aqua>Crafting;lore=A crafting|table interface|<red>NOT IMPLEMENTED]]
+    [i@air] [i@brewing_stand_item[display_name=<aqua>Brewing;lore=A brewing stand|interface|<red>NOT IMPLEMENTED]]
+    [i@air] [i@enchantment_table[display_name=<aqua>Enchantment;lore=An inchantment|interface|<red>NOT IMPLEMENTED]]'
+  debug: 'false'
+  size: '18'
+  type: inventory
+  inventory: CHEST
+  title: Edit Type
+  speed: 0
+  scripts:
+    '1':
+      left:
+      - flag player "cuiconfirm:|:9|[] [] [] [] [] [] [] [] []"
+      - inventory open d:in@cui_editconfirm
+    '2':
+      left:
+      - flag player "cuiconfirm:|:18|[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []"
+      - inventory open d:in@cui_editconfirm
+    '3':
+      left:
+      - flag player "cuiconfirm:|:27|[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] []"
+      - inventory open d:in@cui_editconfirm
+    '4':
+      left:
+      - flag player "cuiconfirm:|:36|[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []"
+      - inventory open d:in@cui_editconfirm
+    '5':
+      left:
+      - flag player "cuiconfirm:|:45|[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []"
+      - inventory open d:in@cui_editconfirm
+    '6':
+      left:
+      - flag player "cuiconfirm:|:54|[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] []"
+      - inventory open d:in@cui_editconfirm
+    '7':
+      left:
+      - flag player "cuiconfirm:|:63|[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []"
+      - inventory open d:in@cui_editconfirm
+    '8':
+      left:
+      - flag player "cuiconfirm:|:72|[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []"
+      - inventory open d:in@cui_editconfirm
+    '9':
+      left:
+      - flag player "cuiconfirm:|:81|[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+        [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []"
+      - inventory open d:in@cui_editconfirm

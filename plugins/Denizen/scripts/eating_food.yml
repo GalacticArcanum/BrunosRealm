@@ -1,0 +1,8 @@
+eating_food:
+  type: world
+  debug: false
+  events:
+    on player consumes item:
+    - if <context.item.lore.contains_text[Food]> {
+      - execute as_player "class cast <context.item.scriptname>"
+      }

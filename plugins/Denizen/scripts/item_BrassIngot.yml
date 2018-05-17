@@ -1,0 +1,18 @@
+BrassIngot:
+  type: item
+  debug: false
+  material: i@gold_ingot
+  display name: '<&f>Brass Ingot'
+  no_id: true
+  lore: 
+  - '<&b>An ingot of smelted brass.'
+  shapeless_recipe: i@firecrystal|i@copperore[quantity=3]|i@zincore
+BrassIngot_alt_1:
+  type: item
+  debug: false
+  material: i@gold_ingot
+  display name: '<&f>Brass Ingot'
+  no_id: true
+  lore: 
+  - '<&b>An ingot of smelted brass.'
+  shapeless_recipe: i@firecrystal|i@brassnugget[quantity=6]|i@zincore

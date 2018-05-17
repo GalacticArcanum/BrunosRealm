@@ -1,0 +1,36 @@
+vote_to_sleep:
+  type: world
+  debug: false
+  events:
+    on player right clicks bed_block:
+    - wait 2s
+    - define world <player.location.world>
+    - define number_players <%world%.players.size>
+    - if <player.is_sleeping> && <def[number_players].is[or_more].than[2]> {
+      - announce "<&5>Luna<&f> <player.name> is sleeping. If you would like to skip to morning, type the command /sleep"
+      - flag server sleep
+      - wait 1t
+      - flag server sleeper:<player>
+      - wait 1t
+      }
+sleep:
+  type: command
+  name: sleep
+  debug: false
+  usage: /sleep
+  script:
+    - choose <server.flag[sleeper]>:
+      - case <player>:
+        - queue clear
+      - default:
+        - choose <server.has_flag[sleep]||false>:
+          - case false:
+            - narrate "<&5>Luna<&f> No players are sleeping. Please find a bed."
+            - queue clear
+          - case true:
+            - time 25300t
+            - flag server sleep:!
+            - flag server sleeper:!
+          - default:
+            - narrate "<&5>Luna<&f> No players are sleeping. Please find a bed."
+            - queue clear

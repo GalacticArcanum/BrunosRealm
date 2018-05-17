@@ -1,0 +1,29 @@
+CraftingLeatherHelmet:
+  type: world
+  debug: false
+  events:
+    on player crafts Leather_Helmet:
+    - narrate "<&3>You crafted a <&6>Bronze Cap!"
+    - determine i@BronzeCap
+CraftingLeatherChestplate:
+  type: world
+  debug: false
+  events:
+    on player crafts Leather_Chestplate:
+    - narrate "<&3>You crafted a <&6>Bronze Harness!"
+    - determine i@BronzeHarness
+CraftingLeatherLeggings:
+  type: world
+  debug: false
+  events:
+    on player crafts Leather_Leggings:
+    - narrate "<&3>You crafted a <&6>Bronze Subligar!"
+    - determine i@BronzeSubligar
+CraftingLeatherBoots:
+  type: world
+  debug: false
+  events:
+    on player crafts Leather_Boots:
+    - narrate "<&3>You crafted a <&6>Bronze Leggings!"
+    - determine i@BronzeLeggings
+    

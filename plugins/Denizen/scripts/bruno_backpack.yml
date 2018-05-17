@@ -1,0 +1,70 @@
+backpack:
+  type: command
+  debug: false
+  name: backpack
+  usage: "/backpack create/open [input]"
+  description: Backpack command
+  permission: bruno.backpacks
+  aliases:
+  - pv
+  permission message: "<&5>Zeus<&f> Talk to the boss, you can't use this command."
+  script:
+  - choose <context.args.size>:
+    - case 0:
+      - narrate "<&5>Zeus<&f> You Must Choose an Option for interacting with your backpack AND Provide An ID Number <&2>[INPUT]<&f>, <script.yaml_key[usage]>"
+    - case 1:
+      - choose <c.args.get[1]>:
+        - default:
+           - narrate "<&5>Zeus<&f> You Must Provide An ID Number <&2>[INPUT]<&f>, <script.yaml_key[usage]>"
+    - case 2:
+      - choose <player.gamemode>:
+        - case SURVIVAL:
+          - define bp_qty <player.flag[backpack_qty].round||0>
+          - define player_name <player.name>
+          - define player_uuid <player.uuid>
+          - define bp_level <player.flag[bp_level].round||1>
+          - define id_number <c.args.get[2]||1>
+          - define slots <def[bp_level].mul_int[9]||0>
+          - narrate "<&5>Hermes<&f> You have <&2>%bp_qty% <&f>backpacks currently and you can use level <&2>%bp_level%<&f> backpacks, which contain <&2>%slots%<&f> slots for storage."
+          - choose <c.args.get[1]>:
+            - case create:
+              - choose <player.flag[backpack_qty].is[less].to[1]||true>:
+                - case true:
+                  - flag <player> backpack_qty:+:1
+                  - wait 1t
+                  - define new_id_number <player.flag[backpack_qty].round>
+                  - wait 1t
+                  - note d:in@generic[title=%player_name%<&sp>Backpack<&sp>%new_id_number%;size=%slots%] as:bp_%bp_level%_%player_uuid%_%new_id_number%
+                  - wait 1t
+                  - narrate "<&5>Hermes<&f> Good job, mate, here is your pack. Type '/backpack open %id_number%' or '/bp open %id_number%' to access it."
+                - case false:
+                  - narrate "<&5>Zeus<&f> Ay, mate, you can't create anymore backpacks at the moment okay?"
+                - case default:
+                  - narrate "<&5>Zeus<&f> Nah. Try again mate. <script.yaml_key[usage]>"
+            - case open:
+              - define chosen_id <c.args.get[2]>
+              - choose %chosen_id%:
+                - case "":
+                  - narrate no
+                - case 0:
+                  - narrate "<&5>Zeus<&f> Nah. <&2>%chosen_id% <&f>is not a valid ID number."\
+                - default:
+                  - choose <player.flag[backpack_qty].is[or_more].to[%chosen_id%]>:
+                    - case true:
+                      - inventory open d:in@bp_%bp_level%_%player_uuid%_%id_number%
+                    - case false:
+                      - narrate "<&5>Zeus<&f> Nah. <&2>%chosen_id% <&f>is not a valid ID number."
+                    - default:
+                      - narrate "<&5>Zeus<&f> Nah. Try again mate. <&2><script.yaml_key[usage]>"
+            - case help:
+              - narrate "<&5>Zeus<&f>  <script.yaml_key[usage]>"
+            - default:
+              - narrate "<&5>Zeus<&f>  Nah. Try again mate. <script.yaml_key[usage]>"
+        - case CREATIVE:
+          - narrate "<&5>Zeus<&f> You must be in survival mode."
+        - case ADVENTURE:
+          - narrate "<&5>Zeus<&f> You must be in survival mode."
+        - case SPECTATOR:
+          - narrate "<&5>Zeus<&f> You must be in survival mode."
+        - default:
+          - narrate "<&5>Zeus<&f> You must be in survival mode."

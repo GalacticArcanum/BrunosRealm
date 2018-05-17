@@ -1,0 +1,18 @@
+ButterflyAxe:
+  type: item
+  debug: false
+  material: i@iron_pickaxe[unbreakable=true]
+  display name: '<&f>Butterfly Axe'
+  lore: 
+  - '<&b>A great axe with a strong maple'
+  - '<&b>handle and a bronze head.' 
+  - '<&4>Requires Level<&7>:<&6> 1'
+  - '<&4>Requires Class<&7>:<&6> Warrior, Ranger'
+  - '<&4>Requires Class<&7>:<&6> Dark Knight, Ninja'
+  - '<&4>Requires Class<&7>:<&6> Red Mage, Thief'
+  - '<&4>Requires Class<&7>:<&6> Paladin, Dragoon'
+  - '<&f>'
+  - '<&2>Weapon Type<&7>:<&6> Great Axe'
+  - '<&2>Delay<&7>:<&6> 504'
+  - '<&2>Damage<&7>:<&6> 19'
+  shapeless_recipe: i@firecrystal|i@iron_ingot|i@bronzeingot[quantity=2]|i@maplelumber

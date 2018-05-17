@@ -1,0 +1,20 @@
+creatureDamaged:
+  type: world
+  debug: false
+  events:
+    on entity damaged:
+    - if <context.damager.is_player||null> {
+      - define attacker "<context.damager.name||<context.cause>>"
+      - if <context.cause> != fire_tick {
+        - if <context.damage.is[MORE].than[0]> && <context.final_damage.is[MORE].than[0]> {
+          - actionbar "<&a> <def[attacker]> <&c>Hit <&a><context.entity.name> <&7>(<&4>HP:<&a> <context.entity.health.round_up||null><&7>) <&a> -> <&c><context.final_damage.round_up||null> DMG" targets:<context.damager||null>|<context.entity||null>
+        }
+      }
+    }
+    - if <context.entity.is_player||null> {
+      - define attacker "<context.damager.name||<context.cause>>"
+      - if <context.cause> != fire_tick {
+        - if <context.damage.is[MORE].than[0]> && <context.final_damage.is[MORE].than[0]> {
+          - actionbar "<&a> <def[attacker]> <&c>Hit <&a><context.entity.name> <&7>(<&4>HP:<&a> <context.entity.health.round_up||null><&7>) <&a> -> <&c><context.final_damage.round_up||null> DMG" targets:<context.damager||null>|<context.entity||null>
+        }
+      }
