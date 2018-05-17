@@ -1,0 +1,179 @@
+CUI_gamesmenu:
+  slots:
+  - '[i@stone_button[display_name=<&6><bold>Back To Previous Menu;lore=<&b>Click To Use Previous Menu]]
+#    [i@leather_boots[display_name=<&6><bold>Adventures;lore=<&9>Click To Clear An Adventure!|<&f>You can keep the loot from these!]]
+#    [i@powered_rail[display_name=<&6><bold>RollerCoaster;lore=<&9>Click To Visit The Roller Coaster!|<&f>Visit All The Roller Coasters!]]
+    [i@diamond_sword[display_name=<&6><bold>Arena Combat;lore=<&b>PvP other Players|<&b>With your /class skill|<&b>And inventory from SMP.]]
+    [i@elytra[display_name=<&6><bold>Elytra Course;lore=<&b>Elytra Flying Course|<&b>Inspired By LoreOfCrafters.eu]]
+    [i@bow[display_name=<&6><bold>Hunger Games;lore=<&b>Click To Play Hunger Games!|<&b>Timed FFA Combat]]
+    [i@workbench[display_name=<&6><bold>Master Builders;lore=<&b>Build against Other Players|<&b>In Timed Themed Rounds!]]
+    [i@iron_sword[display_name=<&6><bold>Competitive KIT PvP;lore=<&b>PvP other Players|<&b>In The Classic Mode.]]
+    [i@gold_axe[display_name=<&6><bold>UHC;lore=<&b>Click To Play Ultra HardCore|<&b>UHC is 4 teams of 2]]
+    [i@workbench[display_name=<&6><bold>HardCore Challenge;lore=<&b>You get 1 life!|<&b>Make it count!|<&b>Server resets occasionally.]]
+    [i@fireball[display_name=<&6><bold>CSGO;lore=<&b>Guns And Explosives!|<&b>Fun and Free to Play|<&b>Free For All]] 
+    [i@iron_pickaxe[display_name=<&6><bold>Bridges;lore=<&b>PvP other Players (1.8.8 Style)|In The Classic Mode.]] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air]
+    [i@barrier[display_name=<&6><bold>Close Warps Menu;lore=<&b>Click This To Close|<&b>The Warps Screen.]]'
+  debug: 'false'
+  size: '18'
+  type: inventory
+  inventory: CHEST
+  title: Click a banner to travel.
+  scripts:
+    '1':
+      left:
+      - inventory close
+      - inventory open d:in@CUI_smartmenu
+    '2':
+      left:
+      - inventory close
+      - choose <player.gamemode>:
+          - case SURVIVAL:
+            - goto survival
+          - case CREATIVE:
+            - narrate "<&5>Hermes<&b> You must be in survival mode."
+            - queue clear
+          - case ADVENTURE:
+            - narrate "<&5>Hermes<&b> You must be in survival mode."
+            - queue clear
+          - case SPECTATOR:
+            - narrate "<&5>Hermes<&b> You must be in survival mode."
+            - queue clear
+          - default:
+            - narrate "<&5>Hermes<&b> You must be in survival mode."
+            - queue clear
+      - mark survival
+      - choose <bungee.list_servers.formatted.contains[Arena]||false>:
+        - case true:
+          - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@Arena'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '3':
+      left:
+      - inventory close
+      - choose <player.gamemode>:
+          - case SURVIVAL:
+            - goto survival
+          - case CREATIVE:
+            - narrate "<&5>Hermes<&b> You must be in survival mode."
+            - queue clear
+          - case ADVENTURE:
+            - narrate "<&5>Hermes<&b> You must be in survival mode."
+            - queue clear
+          - case SPECTATOR:
+            - narrate "<&5>Hermes<&b> You must be in survival mode."
+            - queue clear
+          - default:
+            - narrate "<&5>Hermes<&b> You must be in survival mode."
+            - queue clear
+      - mark survival
+      - choose <bungee.list_servers.formatted.contains[Elytra]||false>:
+        - case true:
+          - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@Elytra'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '4':
+      left:
+      - inventory close
+      - choose <bungee.list_servers.formatted.contains[HungerGames]||false>:
+        - case true:
+          - narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@HungerGames'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '5':
+      left:
+      - inventory close
+      - choose <bungee.list_servers.formatted.contains[BuildingGame]||false>:
+        - case true:
+          - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@BuildingGame'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '6':
+      left:
+      - inventory close
+      - choose <bungee.list_servers.formatted.contains[Competitive]||false>:
+        - case true:
+          - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@Competitive'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '7':
+      left:
+      - inventory close
+      - choose <bungee.list_servers.formatted.contains[UHC]||false>:
+        - case true:
+          - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@UHC'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '8':
+      left:
+      - inventory close
+      - choose <bungee.list_servers.formatted.contains[Challenge]||false>:
+        - case true:
+          - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@Challenge'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '9':
+      left:
+      - inventory close
+      - choose <bungee.list_servers.formatted.contains[CSGO]||false>:
+        - case true:
+          - choose <bungee.server>:
+            - case server@CSGO:
+              - teleport <player> <w@world_csgo.spawn_location>
+              - inventory open d:in@CUI_csgomenu
+              - narrate "<&5>Hermes<&b> Welcome to CSGO. You can use the command /warps to open your personal travel menu."
+              - queue clear
+            - default:
+              - goto sendplayer
+          - mark sendplayer
+          - define player <player>
+          - define playername <player.name>
+          - narrate "<&5>Hermes<&b> Welcome to CSGO. You can use the command /warps to open your personal travel menu."
+          - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@csgo'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+    '10':
+      left:
+      - inventory close
+      - choose <bungee.list_servers.formatted.contains[Bridges]||false>:
+        - case true:
+          - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@Bridges'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '18':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'

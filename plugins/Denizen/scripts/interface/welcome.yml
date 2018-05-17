@@ -1,0 +1,35 @@
+CUI_welcome:
+  slots:
+  - '[i@air] 
+    [i@lime_stained_glass_pane[display_name=Yes, Im new to survival.;lore=Yes, I am fairly new to|surviving in Minecraft.|I could use some|training at some point.]]
+    [i@air]
+    [i@air]
+    [i@air]
+    [i@air]
+    [i@air]
+    [i@red_stained_glass_pane[display_name=No, not new to Survival.;lore=No, I do not need|Any tutorials or help|learning to play survival|now or in the future.]]
+    [i@air]'
+  debug: 'false'
+  size: '9'
+  type: inventory
+  inventory: CHEST
+  title: Are You New To Survival
+  scripts:
+    '2':
+      left:
+      - flag <player> safe_cancel:!
+      - wait 1t
+      - inventory open d:in@cui_race
+      - flag <player> safe_cancel
+      - wait 1t
+      - flag player minecraft_iq:noob
+      - narrate "<&5>Bruno<&f> We will offer you a tutorial sometime in the future. If you need help before then, reach out to a <blue>Veteran player."
+    '8':
+      left:
+      - flag <player> safe_cancel:!
+      - wait 1t
+      - inventory open d:in@cui_race
+      - flag <player> safe_cancel
+      - wait 1t
+      - flag player minecraft_iq:survivor
+      - narrate "<&5>Bruno<&f> You will enjoy the many modifications we have made to our survival environment. If you get stuck and need some help just ask a <blue>Veteran player."

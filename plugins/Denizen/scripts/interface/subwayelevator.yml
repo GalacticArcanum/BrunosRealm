@@ -1,0 +1,53 @@
+CUI_subwayelevator:
+  slots:
+  - '[i@wool[display_name=Please select UP or DOWN]] [i@wool[display_name=Please select UP or DOWN]] [i@green_wool[display_name=UP]] [i@wool[display_name=Please select UP or DOWN]] [i@wool[display_name=Please select UP or DOWN]] [i@wool[display_name=Please select UP or DOWN]] [i@red_wool[display_name=DOWN]]
+    [i@wool[display_name=Please select UP or DOWN]] [i@wool[display_name=Please select UP or DOWN]]'
+  debug: 'false'
+  size: '9'
+  type: inventory
+  inventory: CHEST
+  title: CUI Interface
+  scripts:
+    '1':
+      left:
+      - Narrate '<&5>Hermes<&f>: Please select UP or DOWN'
+    '2':
+      left:
+      - Narrate '<&5>Hermes<&f>: Please select UP or DOWN'
+    '3':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f>: GOING UP'
+      - playsound <player> sound:PISTON_EXTEND
+      - execute as_op 'asc'
+      - if <player.location.cuboids.filter[notable_name.starts_with[elevator]].is_empty.not> {
+        - narrate '<&5>Hermes<&f>: You have arrived at your floor, exit carefully, <player.name>.'
+        } else {
+        - execute as_op 'desc'
+        }
+    '4':
+      left:
+      - Narrate '<&5>Hermes<&f>: Please select UP or DOWN'
+    '5':
+      left:
+      - Narrate '<&5>Hermes<&f>: Please select UP or DOWN'
+    '6':
+      left:
+      - Narrate '<&5>Hermes<&f>: Please select UP or DOWN'
+    '7':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f>: GOING DOWN'
+      - playsound <player> sound:PISTON_RETRACT
+      - execute as_op 'desc'
+      - if <player.location.cuboids.filter[notable_name.starts_with[elevator]].is_empty.not> {
+        - narrate '<&5>Hermes<&f>: You have arrived at your floor, exit carefully, <player.name>.'
+        } else {
+        - execute as_op 'asc'
+        }
+    '8':
+      left:
+      - Narrate '<&5>Hermes<&f>: Please select UP or DOWN'
+    '9':
+      left:
+      - Narrate '<&5>Hermes<&f>: Please select UP or DOWN'

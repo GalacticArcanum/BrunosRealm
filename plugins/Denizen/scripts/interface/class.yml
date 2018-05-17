@@ -1,0 +1,67 @@
+CUI_class:
+  slots:
+  - '[i@wood_sword[display_name=Thief;lore=Opportunistic Survivalist| +5 <RED>DEF<dark_purple> +2 <RED>DEF<dark_purple> Each LVL| +0 <green>MP<dark_purple> +0 <green>MP<dark_purple> Each LVL| +0 <green>MP<dark_purple> Each Second|<white>Thieves use stealth to steal|<white>and shears to backstab.|<&a>For More Information Please|<&a>Visit The Wiki On Our WebApp|<&b>http://www.BrunosRealm.com]]
+    [i@air]
+    [i@wood_axe[display_name=Warrior;lore=Trained Fighter| +10 <RED>DEF<dark_purple> +4 <RED>DEF<dark_purple> Each LVL| +0 <green>MP<dark_purple> +0 <green>MP<dark_purple> Each LVL| +0 <green>MP<dark_purple> Each Second|<white>Fighters are great|<white>at close quarter combat.|<&a>For More Information Please|<&a>Visit The Wiki On Our WebApp|<&b>http://www.BrunosRealm.com]]
+    [i@air]
+    [i@bow[display_name=Ranger;lore=That 1 With The Bow| +7 <RED>DEF<dark_purple> +3 <RED>DEF<dark_purple> Each LVL| +0 <green>MP<dark_purple> +0 <green>MP<dark_purple> Each LVL| +0 <green>MP<dark_purple> Each Second|<white>Rangers are great|<white>at ranged combat.|<white>Rangers have many|<white>special arrow types|<white>and abilities.|<&a>For More Information Please|<&a>Visit The Wiki On Our WebApp|<&b>http://www.BrunosRealm.com]]
+    [i@air]
+    [i@wood_hoe[display_name=Wizard;lore=Powerful Spellcaster|+1 <RED>DEF<dark_purple> +1 <RED>DEF<dark_purple> Each LVL|+10 <green>MP<dark_purple> +4 <green>MP<dark_purple> Each LVL|+.1 <green>MP<dark_purple> Each Second|<white>Wizards are powerful spell users.|<&a>For More Information Please|<&a>Visit The Wiki On Our WebApp|<&b>http://www.BrunosRealm.com]]
+    [i@air]
+    [i@wood_spade[display_name=Medic;lore=Party Healer|+2 <RED>DEF<dark_purple> +1 <RED>DEF<dark_purple> Each LVL|+7 <green>MP<dark_purple> +3 <green>MP<dark_purple> Each LVL|+.2 <green>MP<dark_purple> Each Second|<white>Medics are good|<white>at healing and|<white>support abilities.|<&a>For More Information Please|<&a>Visit The Wiki On Our WebApp|<&b>http://www.BrunosRealm.com]]'
+  debug: 'false'
+  size: '9'
+  type: inventory
+  inventory: CHEST
+  title: Please Pick A Class
+  scripts:
+    '1':
+      left:
+      - flag <player> safe_cancel:!
+      - execute as_player "class profess thief"
+      - inventory close
+      - narrate "<&5>Zeus<&f> You Chose Thief"
+      - flag player first_time:!
+      - flag player class:Thief
+      - group add adventurer
+      - inventory add d:<player.inventory> o:in@Thiefstarterkit
+    '3':
+      left:
+      - flag <player> safe_cancel:!
+      - execute as_player "class profess warrior"
+      - inventory close
+      - narrate "<&5>Zeus<&f> You Chose Warrior"
+      - flag player first_time:!
+      - flag player class:Warrior
+      - group add adventurer
+      - inventory add d:<player.inventory> o:in@Warriorstarterkit
+    '5':
+      left:
+      - flag <player> safe_cancel:!
+      - execute as_player "class profess ranger"
+      - inventory close
+      - narrate "<&5>Zeus<&f> You Chose Ranger"
+      - flag player first_time:!
+      - flag player class:Ranger
+      - group add adventurer
+      - inventory add d:<player.inventory> o:in@Rangerstarterkit
+    '7':
+      left:
+      - flag <player> safe_cancel:!
+      - execute as_player "class profess wizard"
+      - inventory close
+      - narrate "<&5>Zeus<&f> You Chose Wizard"
+      - flag player first_time:!
+      - flag player class:Wizard
+      - group add adventurer
+      - inventory add d:<player.inventory> o:in@Thiefstarterkit
+    '9':
+      left:
+      - flag <player> safe_cancel:!
+      - execute as_player "class profess Medic"
+      - inventory close
+      - narrate "<&5>Zeus<&f> You Chose Medic"
+      - flag player first_time:!
+      - flag player class:Medic
+      - group add adventurer
+      - inventory add d:<player.inventory> o:in@Medicstarterkit

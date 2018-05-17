@@ -1,0 +1,316 @@
+CUI_airshipmenu:
+  slots:
+  - '[i@stone_button[display_name=<&5><bold>Back To Previous Menu;lore=<&b>Click To Use Previous Menu]]
+    [i@end_crystal[display_name=<&5><bold>Sky Port Hub;lore=<&b>Click<&sp>To<&sp>Visit|<&b>The Sky Port Hub|<&b>Air Ships and Space Ships|<&b>Port Built by|<&b>PilchPlays and PirateySquirrel|<&b>Ship Built By PirateySquirrel|<&b>Ship Decorated By MoFoTy86]]
+    [i@end_crystal[display_name=<&5><bold>Capital City Sky Port;lore=<&b>Click<&sp>To<&sp>Visit|<&b>The Capital City SkyPort|<&b>Port Built by|<&b>The Brunos Realm Build Team|<&b>Ship Built By PirateySquirrel|<&b>Ship Decorated By MoFoTy86]]
+    [i@end_crystal[display_name=<&5><bold>Google Sky Port;lore=<&b>Click<&sp>To<&sp>Visit|<&b>The Google Sky Port|<&b>Port Built by HeyItsWonka|<&b>Ship Built By PirateySquirrel|<&b>Ship Decorated By MoFoTy86]]
+    [i@end_crystal[display_name=<&5><bold>Antartica Sky Port;lore=<&b>Click<&sp>To<&sp>Visit|<&b>The Antartica Sky Port|<&b>Port Built by KorkySquirrel|<&b>Ship Built By PirateySquirrel|<&b>Ship Decorated By MoFoTy86]]
+    [i@cobble_wall[display_name=<&6><bold>McRegion<&sp>Airport;lore=<&b>Click<&sp>To<&sp>Visit<&sp>The<&sp>McRegion<&sp>Airport!]]
+    [i@air]
+    [i@air]
+    [i@end_crystal[display_name=<&5><bold>Atmosphere;lore=<&b>Click<&sp>To<&sp>Visit|<&b>The Sky!|<&b>Air Ships and Space Ships]] 
+    [i@boat[display_name=<&5><bold>Marvel S.H.I.E.L.D. Helicarrier;lore=<&b>Click<&sp>To<&sp>Visit|<&b>The Marvel S.H.I.E.L.D. Helicarrier|<&b>At The SkyPort Hub, built by|<&b>PilchPlays and PirateySquirrel!]]
+    [i@boat[display_name=<&5><bold>The Divine Spaceship;lore=<&b>Click<&sp>To<&sp>Visit|<&b>The Divine Spaceship.]]
+    [i@boat[display_name=<&5><bold>Balkon Space Frigate;lore=<&b>Click<&sp>To<&sp>Visit|<&b>A Balkon Space Frigate.]]
+    [i@boat[display_name=<&5><bold>Balkon Space Police;lore=<&b>Click<&sp>To<&sp>Visit|<&b>A Balkon Space Police Ship.]]
+    [i@boat[display_name=<&5><bold>Balkon Attack Ship;lore=<&b>Click<&sp>To<&sp>Visit|<&b>A Balkon Attack Ship.]]
+    [i@air] [i@air] [i@air]
+    [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air]
+    [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air]
+    [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air]
+    [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air]
+    [i@barrier[display_name=<aqua>Close<&sp>Warps<&sp>Menu;lore=<white>Click<&sp>This<&sp>To<&sp>Close|<white>The<&sp>Warps<&sp>Screen.]]'
+  debug: 'false'
+  size: '54'
+  type: inventory
+  inventory: CHEST
+  title: Click an item to travel.
+  scripts:
+    '1':
+      left:
+      - inventory close
+      - inventory open d:in@CUI_adventuremenu
+    '2':
+      left:
+      - inventory close
+      - execute as_op "warp skyport"
+    '3':
+      left:
+      - inventory close
+      - execute as_op "warp airship"
+    '4':
+      left:
+      - inventory close
+      - execute as_op "warp googleair"
+    '5':
+      left:
+      - inventory close
+      - execute as_op "warp IcePort"
+    '6':
+      left:
+      - inventory close
+      - choose <server.list_worlds.formatted.contains[world_airport]>:
+            - case true:
+              - teleport <player> l@-1396,68,1453,world_airport
+              - narrate "<&5>Hermes<&f> Welcome to the McRegion Airport"
+            - case false:
+              - narrate "<&5>Hermes<&f> Wait 15 seconds while we bring back up the warp drives..."
+              - createworld world_airport
+              - wait 15s
+              - execute as_server 'pex world world_airport inherit world'
+              - wait 1t
+              - execute as_server 'gamerule keepInventory true'
+              - wait 1t
+              - teleport <player> l@-1396,68,1453,world_airport
+              - narrate "<&5>Hermes<&f> Welcome to the McRegion Airport"
+            - default:
+              - narrate "<&5>Hermes<&f> An incredibly unlikely super eclipse has occurred and you have to start over...."
+    '7':
+      left:
+      - inventory close
+      - execute as_server 'warp Airport <player.name>'
+      - Narrate "<&5>Hermes<&f> Welcome to Capital City Airport!"
+    '8':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '9':
+      left:
+      - inventory close
+      - choose <server.list_worlds.formatted.contains[world_atmosphere]>:
+            - case true:
+              - teleport <player> <w@world_atmosphere.spawn_location>
+              - narrate "<&5>Hermes<&f> Welcome to the upper Atmosphere."
+            - case false:
+              - narrate "<&5>Hermes<&f> Wait 15 seconds while we bring back up the warp drives..."
+              - createworld world_atmosphere
+              - wait 15s
+              - execute as_server 'pex world world_atmosphere inherit world'
+              - wait 1t
+              - execute as_server 'gamerule keepInventory true'
+              - wait 1t
+              - teleport <player>  <w@world_atmosphere.spawn_location>
+              - narrate "<&5>Hermes<&f> Welcome to the upper Atmosphere."
+            - default:
+              - narrate "<&5>Hermes<&f> An incredibly unlikely super eclipse has occurred and you have to start over...."
+    '10':
+      left:
+      - inventory close
+      - execute as_op "warp HeliCarrier"
+    '11':
+      left:
+      - inventory close
+      - choose <server.list_worlds.formatted.contains[world_DivineSpaceship]>:
+            - case true:
+              - teleport <player> <w@world_DivineSpaceship.spawn_location>
+              - narrate "<&5>Hermes<&f> Welcome to The Divine Space Ship."
+            - case false:
+              - narrate "<&5>Hermes<&f> Wait 15 seconds while we bring back up the warp drives..."
+              - createworld world_DivineSpaceship
+              - wait 15s
+              - execute as_server 'pex world world_DivineSpaceship inherit world'
+              - wait 1t
+              - execute as_server 'gamerule keepInventory true'
+              - wait 1t
+              - teleport <player>  <w@world_DivineSpaceship.spawn_location>
+              - narrate "<&5>Hermes<&f> Welcome to The Divine Space Ship."
+            - default:
+              - narrate "<&5>Hermes<&f> An incredibly unlikely super eclipse has occurred and you have to start over...."
+    '12':
+      left:
+      - inventory close
+      - choose <server.list_worlds.formatted.contains[world_atmosphere]>:
+            - case true:
+              - teleport <player> <w@world_atmosphere.spawn_location>
+              - narrate "<&5>Hermes<&f> Welcome to a Balkan Space Frigate."
+            - case false:
+              - narrate "<&5>Hermes<&f> Wait 15 seconds while we bring back up the warp drives..."
+              - createworld world_atmosphere
+              - wait 15s
+              - execute as_server 'pex world world_atmosphere inherit world'
+              - wait 1t
+              - execute as_server 'gamerule keepInventory true'
+              - wait 1t
+              - teleport <player>  <w@world_atmosphere.spawn_location>
+              - narrate "<&5>Hermes<&f> Welcome to A Balkan Space Frigate."
+            - default:
+              - narrate "<&5>Hermes<&f> An incredibly unlikely super eclipse has occurred and you have to start over...."
+    '13':
+      left:
+      - inventory close
+      - choose <server.list_worlds.formatted.contains[world_atmosphere]>:
+            - case true:
+              - teleport <player> l@BalkanSpacePolice
+              - narrate "<&5>Hermes<&f> Welcome to a Balkan Space Police Ship."
+            - case false:
+              - narrate "<&5>Hermes<&f> Wait 15 seconds while we bring back up the warp drives..."
+              - createworld world_atmosphere
+              - wait 15s
+              - execute as_server 'pex world world_atmosphere inherit world'
+              - wait 1t
+              - execute as_server 'gamerule keepInventory true'
+              - wait 1t
+              - teleport <player>  l@BalkanSpacePolice
+              - narrate "<&5>Hermes<&f> Welcome to a Balkan Space Police Ship."
+            - default:
+              - narrate "<&5>Hermes<&f> An incredibly unlikely super eclipse has occurred and you have to start over...."
+    '14':
+      left:
+      - inventory close
+      - choose <server.list_worlds.formatted.contains[world_atmosphere]>:
+            - case true:
+              - teleport <player> l@BalkanAttackShip
+              - narrate "<&5>Hermes<&f> Welcome to a Balkan Attack Ship."
+            - case false:
+              - narrate "<&5>Hermes<&f> Wait 15 seconds while we bring back up the warp drives..."
+              - createworld world_atmosphere
+              - wait 15s
+              - execute as_server 'pex world world_atmosphere inherit world'
+              - wait 1t
+              - execute as_server 'gamerule keepInventory true'
+              - wait 1t
+              - teleport <player>  l@BalkanAttackShip
+              - narrate "<&5>Hermes<&f> Welcome to a Balkan Attack Ship."
+            - default:
+              - narrate "<&5>Hermes<&f> An incredibly unlikely super eclipse has occurred and you have to start over...."
+    '15':
+      left:
+      - inventory close
+    '16':
+      left:
+      - inventory close
+      - narrate " http://www.youtube.com/brunosrealmtv "
+    '17':
+      left:
+      - inventory close
+      - narrate 'http://www.facebook.com/brunosrealm'
+    '18':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '19':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '20':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '21':
+      left:
+      - inventory close
+    '22':
+      left:
+      - inventory close
+    '23':
+      left:
+      - inventory close
+    '24':
+      left:
+      - inventory close
+    '25':
+      left:
+      - inventory close
+    '26':
+      left:
+      - inventory close
+      - narrate " http://www.youtube.com/brunosrealmtv "
+    '27':
+      left:
+      - inventory close
+      - narrate 'http://www.facebook.com/brunosrealm'
+    '28':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '29':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '30':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '31':
+      left:
+      - inventory close
+    '32':
+      left:
+      - inventory close
+    '33':
+      left:
+      - inventory close
+    '34':
+      left:
+      - inventory close
+    '35':
+      left:
+      - inventory close
+    '36':
+      left:
+      - inventory close
+      - narrate " http://www.youtube.com/brunosrealmtv "
+    '37':
+      left:
+      - inventory close
+      - narrate 'http://www.facebook.com/brunosrealm'
+    '38':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '39':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '40':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '41':
+      left:
+      - inventory close
+    '42':
+      left:
+      - inventory close
+    '43':
+      left:
+      - inventory close
+    '44':
+      left:
+      - inventory close
+    '45':
+      left:
+      - inventory close
+    '46':
+      left:
+      - inventory close
+      - narrate " http://www.youtube.com/brunosrealmtv "
+    '47':
+      left:
+      - inventory close
+      - narrate 'http://www.facebook.com/brunosrealm'
+    '48':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '49':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '50':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '51':
+      left:
+      - inventory close
+    '52':
+      left:
+      - inventory close
+    '53':
+      left:
+      - inventory close
+    '54':
+      left:
+      - inventory close
+      - Narrate "<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps"

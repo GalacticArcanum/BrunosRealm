@@ -1,0 +1,22 @@
+CUI_enterGoogleTower:
+  slots:
+  - '[i@human_skull[display_name=Fwiz;lore=Fwiz is head of YouTubeGaming|A company
+    of Google|Stock Market: GOOG;skull_skin=cd0832b4-ba8f-4b97-9414-10c18237e7ce|eyJ0aW1lc3RhbXAiOjE0NDU3OTAzMjI0MDcsInByb2ZpbGVJZCI6ImNkMDgzMmI0YmE4ZjRiOTc5NDE0MTBjMTgyMzdlN2NlIiwicHJvZmlsZU5hbWUiOiJDaHlhYm9pRndpeiIsInNpZ25hdHVyZVJlcXVpcmVkIjp0cnVlLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGJiNTNiMmVkMmNlZjVkOGYzYTcxODdlYmM4MTkxZWFhMGJiM2FiZGIzZWQxNDNmN2E0ZGMyY2U1MzRiNCJ9fX0=]]
+    [i@human_skull[display_name=OpTicJ;lore=OpTicJ is the community manager|for YouTube
+    Gaming|A company of Google|Stock Market: GOOG;skull_skin=02313960-96c0-436b-b076-97e13ae33410|eyJ0aW1lc3RhbXAiOjE0NDU3OTA1MzgzOTksInByb2ZpbGVJZCI6IjAyMzEzOTYwOTZjMDQzNmJiMDc2OTdlMTNhZTMzNDEwIiwicHJvZmlsZU5hbWUiOiJPcFRpY0pKIiwic2lnbmF0dXJlUmVxdWlyZWQiOnRydWUsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMzcwOGY2ZDk0MTNhNTRhNDQ5YjhjYzJlZDgzOWUyZmIwYjJjMmMzY2YzNzhmZThhMWVmMzQxNGIxMjE4YWQ1In19fQ==]]
+    [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+    [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []'
+  debug: 'false'
+  size: '54'
+  type: inventory
+  inventory: CHEST
+  title: Google Tower Directory
+  scripts:
+    '1':
+      left:
+      - inventory close
+      - Narrate "<&6>HeyItsWonka<white>: Fwiz' office is on the right over there."
+    '2':
+      left:
+      - inventory close
+      - Narrate "<&6>HeyItsWonka<white>: OpTicJ's office is on the right over there."

@@ -1,0 +1,48 @@
+CUI_TicketMaster:
+  slots:
+  - '[i@light_gray_stained_glass_pane] [i@light_gray_stained_glass_pane] [i@lime_stained_glass_pane[display_name=Yes,
+    ready to take the airship.]] [i@light_gray_stained_glass_pane] [i@light_gray_stained_glass_pane]
+    [i@light_gray_stained_glass_pane] [i@red_stained_glass_pane[display_name=No, I''m
+    not ready to take the airship.]] [i@light_gray_stained_glass_pane] [i@light_gray_stained_glass_pane]'
+  debug: 'false'
+  size: '9'
+  type: inventory
+  inventory: CHEST
+  title: Are You Ready To Travel?
+  scripts:
+    '1':
+      left:
+      - Narrate Please choose Yes or No.
+    '2':
+      left:
+      - Narrate Please choose Yes or No.
+    '3':
+      left:
+      - inventory close
+      - if <player.inventory.contains[i@quest_1_airship_pass]> {
+        - take i@quest_1_airship_pass from:<player.inventory>
+        - wait 1t
+        - execute as_server "warp airship <player.name>"
+        - narrate "<&6>Ticket Master<&f>: Thanks for flying with Air Bruno."
+        } else {
+        - narrate "<&6>Ticket Master<&f>: Please come back when you have your airship pass with you."
+        }
+    '4':
+      left:
+      - Narrate Please choose Yes or No.
+    '5':
+      left:
+      - Narrate Please choose Yes or No.
+    '6':
+      left:
+      - Narrate Please choose Yes or No.
+    '7':
+      left:
+      - inventory close
+      - Narrate "<&6>Ticket Master<&f>: Please come back when you are ready to go."
+    '8':
+      left:
+      - Narrate Please choose Yes or No.
+    '9':
+      left:
+      - Narrate Please choose Yes or No.

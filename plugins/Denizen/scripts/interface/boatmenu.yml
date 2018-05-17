@@ -1,0 +1,50 @@
+CUI_boatmenu:
+  slots:
+  - '[i@stone_button[display_name=<&5><bold>Back To Previous Menu;lore=<&9>Click To Use Previous Menu]]
+    [i@boat[display_name=<&5><bold>USS<&sp>Friendship;lore=<&9>Click<&sp>To<&sp>Visit<&sp>The<&sp>USS<&sp>Friendship!]]
+    [i@air]
+    [i@air]
+    [i@air] [i@air] [i@air] [i@air]
+    [i@barrier[display_name=<aqua>Close<&sp>Warps<&sp>Menu;lore=<white>Click<&sp>This<&sp>To<&sp>Close|<white>The<&sp>Warps<&sp>Screen.]]'
+  debug: 'false'
+  size: '9'
+  type: inventory
+  inventory: CHEST
+  title: Click an item to travel.
+  scripts:
+    '1':
+      left:
+      - inventory close
+      - inventory open d:in@CUI_adventuremenu
+    '2':
+      left:
+      - inventory close
+      - execute as_server 'warp USSF <player.name>'
+      - Narrate "<&5>Hermes<&f> Welcome to The USS Friendship! http://www.twitter.com/uss_friendship_"
+    '3':
+      left:
+      - inventory close
+    '4':
+      left:
+      - inventory close
+      - narrate "<&5>Hermes<&f> http://gaming.youtube.com/brunosrealmtv is the server YouTube Channel "
+    '5':
+      left:
+      - inventory close
+      - narrate "<&5>Hermes<&f> http://www.twitter.com/craftteambruno is the server Twitter Page "
+    '6':
+      left:
+      - inventory close
+      - narrate " http://www.youtube.com/brunosrealmtv "
+    '7':
+      left:
+      - inventory close
+      - narrate 'http://www.facebook.com/brunosrealm'
+    '8':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '9':
+      left:
+      - inventory close
+      - Narrate "<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps"

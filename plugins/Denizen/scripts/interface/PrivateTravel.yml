@@ -1,0 +1,101 @@
+CUI_PrivateTravel:
+  slots:
+  - '[i@wood_button[display_name=<aqua>Back To Previous Menu;lore=<&9>Click To Use Previous Menu]]
+    [i@human_skull[display_name=<aqua><bold>Nether_Enders;lore=<&9>Click<&sp>To<&sp>Visit<&sp>The<&sp>Nether<&sp>Enders!|A Private Vanilla Server|by PilchPlays and Friends|For more info visit| youtube.com/pilchplays]]
+    [i@human_skull[display_name=<aqua><bold>Pal Patrol City;lore=<&9>Click<&sp>To<&sp>Visit<&sp>Pal Patrol City|A Private Vanilla Server|for OpTicJ & Friends|For more info visit| youtube.com/opticj]]
+    [i@human_skull[display_name=<aqua><bold>USS Friendship;lore=<&9>Click<&sp>To<&sp>Visit<&sp>The<&sp>USS Friendship!|A Private Vanilla Server|by CheweeMCBacca|For more info visit| youtube.com/cheweemcbaccagaming]]
+    [i@air] [i@air] [i@air] [i@air]
+    [i@barrier[display_name=<aqua>Close<&sp>Warps<&sp>Menu;lore=<&f>Click<&sp>This<&sp>To<&sp>Close|<&f>The<&sp>Warps<&sp>Screen.]]'
+  debug: 'false'
+  size: '9'
+  type: inventory
+  inventory: CHEST
+  title: Click an item to travel
+  scripts:
+    '1':
+      left:
+      - inventory open d:in@CUI_smartmenu
+    '2':
+      left:
+      - choose <bungee.list_servers.formatted.contains[nether_enders]||false>:
+        - case true:
+          - inventory close
+          - define player <player>
+          - ~bungeetag <def[player].is_whitelisted||false> server:server@nether_enders save:is_whitelisted
+          - choose <entry[is_whitelisted].result||false>:
+            - case true:
+              - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+              - wait 1t
+              - adjust <player> 'send_to:server@nether_enders'
+            - case false:
+              - narrate "<&5>Hermes<&f> For more information <&2> http://pilch.teambruno.org"
+              - narrate "<&5>Hermes<&f> You do not have a passport to travel to the Nether_Enders Realm yet."
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - inventory close
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '3':
+      left:
+      - choose <player.gamemode>:
+        - case SURVIVAL:
+          - goto survival
+        - case CREATIVE:
+          - inventory close
+          - narrate "<&5>Hermes<&b> You must be in survival mode."
+          - queue clear
+        - case ADVENTURE:
+          - inventory close
+          - narrate "<&5>Hermes<&b> You must be in survival mode."
+          - queue clear
+        - case SPECTATOR:
+          - inventory close
+          - narrate "<&5>Hermes<&b> You must be in survival mode."
+          - queue clear
+        - default:
+          - inventory close
+          - narrate "<&5>Hermes<&b> You must be in survival mode."
+          - queue clear
+      - mark survival
+      - inventory close
+      - choose <bungee.list_servers.formatted.contains[PalPatrol]||false>:
+        - case true:
+          - choose <bungee.server>:
+            - case server@PalPatrol:
+              - teleport <player> l@-11632,74,3847,world_themepark
+              - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+              - queue clear
+            - default:
+              - goto sendplayer
+          - mark sendplayer
+          - define player <player>
+          - define playername <player.name>
+          - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+          - wait 1t
+          - adjust <player> 'send_to:server@PalPatrol'
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+    '4':
+      left:
+      - choose <bungee.list_servers.formatted.contains[USSF]||false>:
+        - case true:
+          - inventory close
+          - define player <player>
+          - ~bungeetag <def[player].is_whitelisted||false> server:server@USSF save:is_whitelisted
+          - choose <entry[is_whitelisted].result||false>:
+            - case true:
+              - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+              - wait 1t
+              - adjust <player> 'send_to:server@USSF'
+            - case false:
+              - narrate "<&5>Hermes<&f> For more information <&2> http://youtube.com/cheweemcbaccagaming"
+              - narrate "<&5>Hermes<&f> You do not have a passport to travel to the USS Friendship Realm yet."
+        - case false:
+          - narrate "<&5>Hermes<&f> The Bifrost is currently offline... Please travel to a new destination."
+        - default:
+          - inventory close
+          - narrate "<&5>Hermes<&f> Incredibly unlikely super eclipse has occurred and you have to start over..."
+    '9':
+      left:
+      - inventory close
+      - Narrate "<&5>Hermes<&b> To bring the warp screen back up, simply type in chat: /warps"

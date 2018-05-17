@@ -1,0 +1,41 @@
+CUI_CSGOmenu:
+  scripts:
+    '1':
+      left:
+      - inventory close
+      - inventory open d:in@CUI_gamesmenu
+    '2':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - flag <player> csgo_player:!
+      - wait 1t
+      - teleport <player> l@55,49,-77,world_csgo
+    '3':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - teleport <player> l@0,6,0,world_rust
+    '4':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - teleport <player> l@0,6,0,world_dust
+    '54':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+  title: Click a banner to travel.
+  slots:
+  - '[i@stone_button[display_name=<&6><bold>Back To Previous Menu;lore=<&b>Click To Use Previous Menu]]
+    [i@banner[base_color=RED;display_name=<aqua>Click<&sp>To<&sp>Go<&sp>To<&sp><&e>STORE;lore=<&9>WEAPONS<&sp>Shop]]
+    [i@banner[base_color=BROWN;display_name=<aqua>Click<&sp>To<&sp>Go<&sp>To<&sp><&e>Rust;lore=<&9>Bedazled_Bacon<&sp>CoD<&sp>MW2<&sp>Map]]
+    [i@banner[base_color=YELLOW;display_name=<aqua>Click<&sp>To<&sp>Go<&sp>To<&sp><&e>Dust;lore=<&9>RUFUS11<&sp>CSGO<&sp>Map]] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+    [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+    [] [i@barrier[display_name=<&e>Close<&sp>Warps<&sp>Menu;lore=<&f>Click<&sp>This<&sp>To<&sp>Close|<&f>The<&sp>Warps<&sp>Screen.]]'
+  inventory: CHEST
+  debug: 'true'
+  type: inventory
+  size: '54'

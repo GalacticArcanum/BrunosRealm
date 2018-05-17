@@ -1,0 +1,290 @@
+CUI_stupidmenu:
+  slots:
+  - '[i@banner[base_color=BLACK;display_name=Chuckville;patterns=li@LIGHT_BLUE/STRIPE_DOWNRIGHT|LIGHT_BLUE/STRIPE_DOWNLEFT|GRAY/TRIANGLES_TOP|GRAY/TRIANGLES_BOTTOM|SILVER/CURLY_BORDER|BLUE/SKULL]]
+    [i@banner,15[base_color=WHITE;display_name=§bChillville;lore=§9Click To Visit
+    Chillville!;patterns=li@BLUE/MOJANG|BLUE/GRADIENT|RED/GRADIENT_UP|WHITE/TRIANGLES_TOP|WHITE/TRIANGLES_BOTTOM]]
+    [i@banner,1[base_color=RED;display_name=§bFire Town;lore=§9Click To Visit Fire
+    Town!;patterns=li@GRAY/BRICKS|RED/TRIANGLE_BOTTOM|RED/TRIANGLE_TOP|ORANGE/TRIANGLES_BOTTOM|ORANGE/TRIANGLES_TOP|WHITE/SKULL]]
+    [i@banner,12[base_color=LIGHT_BLUE;display_name=§bLake Town;lore=§9Click To Visit
+    Lake Town!]] [i@banner,4[base_color=BLUE;display_name=§bMaple;lore=§9Click To
+    Visit Maple!;patterns=li@LIGHT_BLUE/GRADIENT|WHITE/GRADIENT|YELLOW/FLOWER|ORANGE/CIRCLE_MIDDLE|WHITE/TRIANGLE_BOTTOM|BROWN/TRIANGLES_BOTTOM]]
+    [i@banner,10[base_color=LIME;display_name=§bPal Patrol;lore=§9Click To Visit Pal
+    Patrol!;patterns=li@WHITE/STRAIGHT_CROSS|RED/HALF_HORIZONTAL|LIME/CURLY_BORDER|LIME/STRIPE_TOP]]
+    [i@banner[base_color=BLACK;display_name=§bWarlord''s Outpost;lore=§9Click To Visit
+    The Warlord''s Outpost!;patterns=li@RED/STRIPE_MIDDLE|RED/FLOWER|YELLOW/RHOMBUS_MIDDLE|BLACK/FLOWER|GRAY/TRIANGLES_BOTTOM|GRAY/TRIANGLES_TOP]]
+    [i@banner,4[base_color=BLUE;display_name=§bBad Wolf Village;lore=§9Click To Visit
+    Bad Wolf Village!;patterns=li@WHITE/BRICKS|BLUE/HALF_HORIZONTAL_MIRROR|BLACK/STRAIGHT_CROSS|BLUE/STRAIGHT_CROSS|BLACK/BORDER|BLUE/BORDER]]
+    [i@pumpkin[display_name=§bPilch Plays Pumpkin Spleef;lore=§9Click To Visit Pumpking
+    Spleef!]] [i@banner,4[base_color=BLUE;display_name=§bUSS Friendship;lore=§9Click
+    To Visit The USS Friendship!]] [i@banner,13[base_color=MAGENTA;display_name=§bAsylum;lore=§9Click
+    To Visit The Asylum!]] [i@banner,4[base_color=BLUE;display_name=§bCreative Republic;lore=§9Click
+    To Visit The Creative Republic!;patterns=li@WHITE/STRIPE_DOWNLEFT|WHITE/STRIPE_DOWNRIGHT|RED/CROSS|WHITE/STRIPE_CENTER|WHITE/STRIPE_MIDDLE|RED/STRAIGHT_CROSS]]
+    [i@banner,15[base_color=WHITE;display_name=§bStockholm;lore=§9Click To Visit Stockholm!;patterns=li@BLACK/CREEPER|YELLOW/BORDER|BLACK/CREEPER]]
+    [i@banner,15[base_color=WHITE]] [i@banner,4[base_color=BLUE;display_name=§bGlacier;lore=§9Click
+    To Visit Glacier!;patterns=li@BLACK/TRIANGLE_BOTTOM|BLUE/STRIPE_SMALL|WHITE/CIRCLE_MIDDLE|BLACK/CURLY_BORDER|BLUE/FLOWER]]
+    [i@banner,5[base_color=PURPLE;display_name=§bCamelot;lore=§9Click To Visit Camelot!;patterns=li@BLUE/GRADIENT_UP|BLACK/BRICKS|BLACK/CURLY_BORDER|GREEN/FLOWER|LIGHT_BLUE/CIRCLE_MIDDLE|GREEN/FLOWER]]
+    [i@banner,11[base_color=YELLOW]] [i@banner,2[base_color=GREEN]] [i@nether_star[display_name=§bDrop
+    Party;lore=§9Click To Visit Drop Party Zone!]] [i@banner,7[base_color=SILVER;display_name=§bThemePark;lore=§9Click
+    To Visit The Theme Park!|Visit All The Roller Coasters!]] [i@banner,8[base_color=GRAY;display_name=§bSuburbia;lore=§9Click
+    To Visit Surburbia!]] [i@banner[display_name=§bDiamond City;lore=§9Click To Visit
+    Diamond City!;patterns=li@LIGHT_BLUE/FLOWER|BLACK/HALF_HORIZONTAL_MIRROR|LIGHT_BLUE/STRIPE_CENTER|BLACK/CURLY_BORDER|BLACK/SQUARE_TOP_RIGHT|BLACK/SQUARE_TOP_LEFT]]
+    [i@banner,15[base_color=WHITE;display_name=§bMurphy Town;lore=§9Click To Visit
+    Murphy Town!;patterns=li@BLUE/GRADIENT|BLUE/RHOMBUS_MIDDLE|WHITE/TRIANGLES_TOP|WHITE/STRIPE_BOTTOM|RED/TRIANGLES_BOTTOM|MAGENTA/TRIANGLES_BOTTOM]]
+    [i@banner,10[base_color=LIME;display_name=§bThe Nae Nae;lore=§9Click To Visit
+    The Nae Nae!;patterns=li@MAGENTA/CIRCLE_MIDDLE|BROWN/CIRCLE_MIDDLE|RED/SQUARE_TOP_LEFT|YELLOW/SQUARE_BOTTOM_RIGHT|BLUE/SQUARE_BOTTOM_LEFT|BLUE/SQUARE_TOP_RIGHT]]
+    [i@banner,12[base_color=LIGHT_BLUE;display_name=§bOasis Paradise;lore=§9Click
+    To Visit Oasis Paradise!;patterns=li@ORANGE/STRIPE_BOTTOM|YELLOW/FLOWER]] [i@banner,15[base_color=WHITE;display_name=§bSlotherin;lore=§9Click
+    To Visit Slotherin!;patterns=li@LIGHT_BLUE/DIAGONAL_LEFT|RED/DIAGONAL_RIGHT|BLACK/CREEPER]]
+    [i@banner,15[base_color=WHITE;display_name=§bCandy Land;lore=§9Click To Visit
+    Candy Land!;patterns=li@RED/STRIPE_SMALL|WHITE/STRIPE_BOTTOM|WHITE/STRIPE_TOP|LIGHT_BLUE/CURLY_BORDER|LIGHT_BLUE/SQUARE_TOP_RIGHT|LIGHT_BLUE/SQUARE_BOTTOM_LEFT]]
+    [i@diamond_sword[display_name=§bPVP City;lore=PvP other Players And|Survive The
+    Zombie Apocolypse.]] [i@diamond_sword[display_name=§bHunger Games;lore=§9Click
+    To Play Hunger Games!]] [i@diamond_sword[display_name=§bCSGO;lore=PvP other Players|With
+    Guns And Explosives!]] [i@diamond_sword[display_name=§bBuild Masters;lore=Build
+    against Other Players|In Timed Themed Rounds1]] [i@diamond_sword[display_name=§bStar
+    Wars;lore=PvP other Players|Using Star Wars Weapons!]] [i@diamond_sword[display_name=§bBridges;lore=PvP
+    other Players|In The Classic Mode.]] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air]
+    [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air] [i@air]
+    [i@air] [i@air] [i@air] [i@banner,10[base_color=LIME;patterns=li@MAGENTA/STRIPE_RIGHT|BLUE/STRIPE_LEFT|WHITE/GRADIENT_UP|GRAY/STRIPE_BOTTOM|BLACK/STRIPE_SMALL|BLACK/BORDER]]
+    [i@barrier[display_name=§bClose Warps Menu;lore=§fClick This To Close|§fThe Warps
+    Screen.]]'
+  debug: 'false'
+  size: '54'
+  type: inventory
+  inventory: CHEST
+  title: Click a banner to travel.
+  scripts:
+    '22':
+      left:
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp DiamondCity <player.name>'
+      - Narrate 'Welcome to Diamond City!'
+    '23':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp MurphyTown <player.name>'
+      - Narrate 'Welcome to MurphyTown!'
+    '24':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp TheNaeNae <player.name>'
+      - Narrate 'Welcome to TheNaeNae!'
+    '25':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp OasisParadise <player.name>'
+      - Narrate 'Welcome to Oasis Paradise!'
+    '26':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Slotherin <player.name>'
+      - Narrate 'Welcome to Slotherin!'
+    '27':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp CandyLand <player.name>'
+      - Narrate 'Welcome to Candy Land!'
+    '28':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp pvpcity <player.name>'
+      - Narrate 'Welcome to PVP City! <red>WARNING! PVP IS ON IN THIS AREA!'
+    '29':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - adjust <player> 'send_to:server@hungergames'
+    '50':
+      left:
+      - inventory close
+      - narrate 'http://www.twitter.com/craftteambruno'
+    '51':
+      left:
+      - inventory close
+      - narrate 'http://www.youtube.com/brunosrealmtv'
+    '30':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - adjust <player> 'send_to:server@csgo'
+    '52':
+      left:
+      - inventory close
+      - narrate 'http://www.facebook.com/brunosrealm'
+    '31':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - adjust <player> 'send_to:server@buildinggame'
+    '53':
+      left:
+      - inventory close
+      - narrate 'http://www.instagram.com/corporalbruno'
+    '10':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp USSF <player.name>'
+      - Narrate 'Welcome to The USS Friendship!'
+    '32':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - adjust <player> 'send_to:server@starwars'
+    '54':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+    '11':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Asylum <player.name>'
+      - Narrate 'Welcome to The Asylum!'
+    '33':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - adjust <player> 'send_to:server@bridges'
+    '12':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp CreativeRepublic <player.name>'
+      - Narrate 'Welcome to Creative Republic!'
+    '13':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Stockholm <player.name>'
+      - Narrate 'Welcome to Stockholm!'
+    '14':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+    '15':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp GlacierWarriors <player.name>'
+      - Narrate 'Welcome to the Glacier!'
+    '16':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Camelot <player.name>'
+      - Narrate 'Welcome to Camelot!'
+    '17':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+    '18':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+    '19':
+      left:
+      - inventory close
+      - execute as_server 'warp dropparty <player.name>'
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - Narrate 'Welcome to Capital City Drop Party area! Drop parties happen here when the server receives a certain number of votes. Type /vote for more information.'
+    '1':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - if <player.has_flag[quest_1_airship_pass]> { - execute as_server 'warp Spawn <player.name>' } else { - execute as_server 'warp Start_survival <player.name>' }
+      - Narrate 'Welcome to the spawn area!'
+    '2':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'tp <player.name> -6818 94 -1913'
+      - Narrate 'Welcome to Chillville!'
+    '3':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'tp <player.name> -6909 66 -394'
+      - Narrate 'Welcome to Fire Town!'
+    '4':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'tp <player.name> -6411 65 -315'
+      - Narrate 'Welcome to Lake Town!'
+    '5':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'tp <player.name> -6400 70 4389'
+      - Narrate 'Welcome to Maple Village!'
+    '6':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'tp <player.name> -6295 83 -826'
+      - Narrate 'Welcome to Pal Patrol!'
+    '7':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Warlords <player.name>'
+      - Narrate 'Welcome to Warlords Outpost!'
+    '8':
+      left:
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp BadWolfVillage <player.name>'
+      - Narrate 'Welcome to Bad Wolf Village!'
+    '9':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'tp <player.name> -6885 75 -1736'
+      - Narrate 'Welcome to PilchPlays Build Challenge!'
+    '20':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp themepark <player.name>'
+      - Narrate 'Welcome to The Brunos Realm Theme Park!''
+    '21':
+      left:
+      - inventory close
+      - Narrate 'To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp subway <player.name>'
+      - Narrate 'Welcome to The Suburbs of Capital City!'

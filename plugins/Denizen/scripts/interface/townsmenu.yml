@@ -1,0 +1,211 @@
+CUI_townsmenu:
+  slots:
+  - '[i@stone_button[display_name=<&6><bold>Back To Previous Menu;lore=<&f>Click To Use Previous Menu]]
+    [i@banner[base_color=BLACK;display_name=<&6><bold>Capital<&sp>City;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Capital<&sp>City!|FUTURE TIME PERIOD]]
+    [i@banner,8[base_color=GRAY;display_name=<&6><bold>Capital City Suburbs;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Surburbia!]]
+    [i@banner,13[base_color=BROWN;display_name=<&6><bold>Arabia;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Arabia!]]
+    [i@banner,13[base_color=MAGENTA;display_name=<&6><bold>Asylum;lore=<&b>Click<&sp>To<&sp>Visit<&sp>The<&sp>Asylum!]]
+    [i@banner,4[base_color=BLUE;display_name=<&6><bold>Bad<&sp>Wolf<&sp>Village;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Bad<&sp>Wolf<&sp>Village!;patterns=li@WHITE/BRICKS|BLUE/HALF_HORIZONTAL_MIRROR|BLACK/STRAIGHT_CROSS|BLUE/STRAIGHT_CROSS|BLACK/BORDER|BLUE/BORDER]]
+    [i@banner,15[base_color=WHITE;display_name=<&6><bold>Chillville;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Chillville!;patterns=li@BLUE/MOJANG|BLUE/GRADIENT|RED/GRADIENT_UP|WHITE/TRIANGLES_TOP|WHITE/TRIANGLES_BOTTOM]]
+    [i@banner[base_color=BLACK;display_name=<&6><bold>Chuckville;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Chuckville!;patterns=li@LIGHT_BLUE/STRIPE_DOWNRIGHT|LIGHT_BLUE/STRIPE_DOWNLEFT|GRAY/TRIANGLES_TOP|GRAY/TRIANGLES_BOTTOM|SILVER/CURLY_BORDER|BLUE/SKULL]]
+    [i@banner,4[base_color=BLUE;display_name=<&6><bold>Creative<&sp>Republic;lore=<&b>Click<&sp>To<&sp>Visit<&sp>The<&sp>Creative<&sp>Republic!;patterns=li@WHITE/STRIPE_DOWNLEFT|WHITE/STRIPE_DOWNRIGHT|RED/CROSS|WHITE/STRIPE_CENTER|WHITE/STRIPE_MIDDLE|RED/STRAIGHT_CROSS]]
+    [i@banner,5[base_color=PURPLE;display_name=<&6><bold>Dagar;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Dagar!|<&5>Built by Hennessey65.;patterns=li@BLUE/GRADIENT_UP|BLACK/BRICKS|BLACK/CURLY_BORDER|GREEN/FLOWER|LIGHT_BLUE/CIRCLE_MIDDLE|GREEN/FLOWER]]
+    [i@banner[base_color=BROWN;display_name=<&6><bold>Egypt;lore=<&b>Build by 4e29!]]
+    [i@banner[base_color=WHITE;display_name=<&6><bold>Fathom;lore=<&b>See<&sp>Pilch!]]
+    [i@banner,1[base_color=RED;display_name=<&6><bold>Fire<&sp>Town;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Fire<&sp>Town!|<&b>ONFIRE53 LIVES HERE;patterns=li@GRAY/BRICKS|RED/TRIANGLE_BOTTOM|RED/TRIANGLE_TOP|ORANGE/TRIANGLES_BOTTOM|ORANGE/TRIANGLES_TOP|WHITE/SKULL]]
+    [i@banner[base_color=YELLOW;display_name=<&6><bold>4e29;lore=<&b>4e29 Build Team Built This!]]
+    [i@banner,4[base_color=BLUE;display_name=<&6><bold>Glacier;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Glacier!;patterns=li@BLACK/TRIANGLE_BOTTOM|BLUE/STRIPE_SMALL|WHITE/CIRCLE_MIDDLE|BLACK/CURLY_BORDER|BLUE/FLOWER]]
+    [i@banner,12[base_color=LIGHT_BLUE;display_name=<&6><bold>Lake<&sp>Town;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Lake<&sp>Town!|<&b>BRUNO LIVES HERE]]
+    [i@banner,4[base_color=BLUE;display_name=<&6><bold>Maple;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Maple!;patterns=li@LIGHT_BLUE/GRADIENT|WHITE/GRADIENT|YELLOW/FLOWER|ORANGE/CIRCLE_MIDDLE|WHITE/TRIANGLE_BOTTOM|BROWN/TRIANGLES_BOTTOM]]
+    [i@banner,15[base_color=WHITE;display_name=<&6><bold>Murphy<&sp>Town;lore=<&b>Click<&sp>To<&sp>Visit<&sp>murphy<&sp>Town!;patterns=li@BLUE/GRADIENT|BLUE/RHOMBUS_MIDDLE|WHITE/TRIANGLES_TOP|WHITE/STRIPE_BOTTOM|RED/TRIANGLES_BOTTOM|MAGENTA/TRIANGLES_BOTTOM]]
+    [i@banner,12[base_color=LIGHT_BLUE;display_name=<&6><bold>Oasis<&sp>Paradise;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Oasis<&sp>Paradise!;patterns=li@ORANGE/STRIPE_BOTTOM|YELLOW/FLOWER]]
+    [i@banner,10[base_color=LIME;display_name=<&6><bold>Pal<&sp>Patrol;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Pal<&sp>Patrol!|<&f>This<&sp>is<&sp>OpticJ<&sp>and<&sp>Ady<&sp>Town;patterns=li@WHITE/STRAIGHT_CROSS|RED/HALF_HORIZONTAL|LIME/CURLY_BORDER|LIME/STRIPE_TOP]]
+    [i@banner,15[base_color=WHITE;display_name=<&6><bold>Slotherin;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Slotherin!;patterns=li@LIGHT_BLUE/DIAGONAL_LEFT|RED/DIAGONAL_RIGHT|BLACK/CREEPER]]
+    [i@banner,15[base_color=WHITE;display_name=<&6><bold>Stockholm;lore=<&b>Click<&sp>To<&sp>Visit<&sp>Stockholm!;patterns=li@BLACK/CREEPER|YELLOW/BORDER|BLACK/CREEPER]]
+    [i@banner[base_color=GREEN;display_name=<&6><bold>Tree House City;lore=<&b>Houses in the trees.|<&b>A Town Built By|<&b>AllieCat298 and _Master_Kris_]]
+    [i@banner[base_color=BLACK;display_name=<&6><bold>Warlord''s<&sp>Outpost;lore=<&b>Click<&sp>To<&sp>Visit<&sp>The<&sp>Warlord''s<&sp>Outpost!;patterns=li@RED/STRIPE_MIDDLE|RED/FLOWER|YELLOW/RHOMBUS_MIDDLE|BLACK/FLOWER|GRAY/TRIANGLES_BOTTOM|GRAY/TRIANGLES_TOP]]
+    [i@air] [i@air]
+    [i@barrier[display_name=<&b>Close<&sp>Warps<&sp>Menu;lore=<white>Click<&sp>This<&sp>To<&sp>Close|<white>The<&sp>Warps<&sp>Screen.]]'
+  debug: 'false'
+  size: '27'
+  type: inventory
+  inventory: CHEST
+  title: Click a banner to travel.
+  scripts:
+    '1':
+      left:
+      - inventory open d:in@CUI_smartmenu
+    '2':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Spawn <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Capital City!'
+    '3':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp subway <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to The Suburbs of Capital City!'
+    '4':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Arabia <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to The Arabia!'
+    '5':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Asylum <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to The Asylum!'
+    '6':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp BadWolfVillage <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Bad Wolf Village!'
+    '7':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - teleport 'l@-6818,94,-1913,world'
+      - Narrate '<&5>Hermes<&f> Welcome to Chillville!'
+    '8':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Chuckville <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Chuckville'
+    '9':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp CreativeRepublic <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Creative Republic!'
+    '10':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Dagar <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Dagar!'
+    '11':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Egypt <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Egypt!'
+    '12':
+      left:
+      - inventory close
+      - narrate "<&5>Hermes<&f> For more information <&2> http://www.youtube.com/pilchplays"
+      - if <player.flag[clan_tag].contains[fathom]> && <player.inventory.contains[i@sponge]> {
+        - execute as_server 'warp fathom <player.name>'
+        - Narrate "<&5>Hermes<&f> Welcome Back to <&2>Fathom!'
+        } else {
+        - narrate "<&5>Hermes<&f> You have not found <&2>Fathom <&f>yet."
+        }
+    '13':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - teleport 'l@-6909,66,-394,world'
+      - Narrate '<&5>Hermes<&f> Welcome to Fire Town!'
+    '14':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp 4e29 <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to the 4e29!'
+    '15':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp GlacierWarriors <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to the Glacier!'
+    '16':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - teleport 'l@-6411,65,-315,world'
+      - Narrate '<&5>Hermes<&f> Welcome to Lake Town!'
+    '17':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - teleport 'l@-6400,70,4389,world'
+      - Narrate '<&5>Hermes<&f> Welcome to Maple Village!'
+    '18':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp murphyTown <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to murphyTown!'
+    '19':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp OasisParadise <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Oasis Paradise!'
+    '20':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - teleport 'l@-6295,83,-826,world'
+      - Narrate '<&5>Hermes<&f> Welcome to Pal Patrol! Visit <&2> http://youtube.com/opticj <&f>for more information!'
+    '21':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Slotherin <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Slotherin!'
+    '22':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Stockholm <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Stockholm!'
+    '23':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp TreeHouseCity <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Tree House City'
+    '24':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
+      - wait 1t
+      - execute as_server 'warp Warlords <player.name>'
+      - Narrate '<&5>Hermes<&f> Welcome to Warlords Outpost!'
+    '25':
+      left:
+      - inventory close
+    '26':
+      left:
+      - inventory close
+    '27':
+      left:
+      - inventory close
+      - Narrate '<&5>Hermes<&f> To bring the warp screen back up, simply type in chat: /warps'
