@@ -1,11 +1,11 @@
-Aero I BLM: 
-  name: 'Aero I BLM'
+Aero I RDM: 
+  name: 'Aero I RDM'
   type: 'Elemental Magic Spell'
   max-level: 1
   skill-req-lvl: 0
   needs-permission: 'false'
   attributes: 
-    level-base: '9'
+    level-base: '14'
     level-scale: '0'
     cost-base: '0'
     cost-scale: '0'

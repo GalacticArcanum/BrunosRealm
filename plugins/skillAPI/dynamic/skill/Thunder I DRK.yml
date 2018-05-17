@@ -1,24 +1,24 @@
-Aero I BLM: 
-  name: 'Aero I BLM'
+Thunder I DRK: 
+  name: 'Thunder I DRK'
   type: 'Elemental Magic Spell'
   max-level: 1
   skill-req-lvl: 0
   needs-permission: 'false'
   attributes: 
-    level-base: '9'
+    level-base: '35'
     level-scale: '0'
     cost-base: '0'
     cost-scale: '0'
     cooldown-base: '2'
     cooldown-scale: '0'
-    mana-base: '6'
+    mana-base: '9'
     mana-scale: '0'
     points-spent-req-base: '0'
     points-spent-req-scale: '0'
     incompatible: 
     - ''
   msg: '&6{player} &2has cast &6{skill}&7.'
-  icon: 'PRISMARINE_CRYSTALS'
+  icon: 'PRISMARINE_SHARD'
   icon-data: 0
   icon-lore: 
   - '&d{name} &7({level}/{max})'
@@ -104,7 +104,7 @@ Aero I BLM:
               data: 
                 icon-key: ''
                 type: 'In Biome'
-                biome: '131616'
+                biome: '0'
                 indicator: '2D'
               children: 
                 Value Set-h: 
@@ -124,7 +124,7 @@ Aero I BLM:
               data: 
                 icon-key: ''
                 type: 'Not In Biome'
-                biome: '131616'
+                biome: '0'
                 indicator: '2D'
               children: 
                 Value Set-j: 
@@ -144,7 +144,7 @@ Aero I BLM:
               data: 
                 icon-key: ''
                 type: 'Set'
-                key: 'Detonation'
+                key: 'Impaction'
                 indicator: '2D'
               children: 
                 Value Set-l: 
@@ -273,7 +273,7 @@ Aero I BLM:
                     -interval: '1'
                     -view-range: '25'
                     -particle-type: 'TOWN_AURA'
-                    -particle-material: 'Sandstone'
+                    -particle-material: 'Prismarine Shard'
                     -particle-data: '0'
                     -particle-amount: '0'
                     -particle-dx: '0'
@@ -292,15 +292,15 @@ Aero I BLM:
                         frequency: '0.05'
                         angle: '0'
                         start: '0'
-                        duration-base: '2'
+                        duration-base: '0.5'
                         duration-scale: '0'
-                        h-translation-base: '0'
+                        h-translation-base: '2'
                         h-translation-scale: '0'
-                        v-translation-base: '0'
+                        v-translation-base: '2'
                         v-translation-scale: '0'
                         h-cycles: '1'
                         v-cycles: '1'
-                        particle: 'Sweep Attack'
+                        particle: 'Crit'
                         arrangement: 'Circle'
                         radius-base: '2'
                         radius-scale: '0'
@@ -325,7 +325,7 @@ Aero I BLM:
                         icon-key: ''
                         counts: 'False'
                         version: '1.9+'
-                        newsound: 'Entity Enderdragon Flap'
+                        newsound: 'Entity Lightning Impact'
                         volume-base: '100'
                         volume-scale: '0'
                         pitch-base: '1'
@@ -349,7 +349,7 @@ Aero I BLM:
                         icon-key: 'V'
                         counts: 'False'
                         key: 'V'
-                        value-base: '40'
+                        value-base: '85'
                         value-scale: '0'
                         indicator: '2D'
                       children:  {}
@@ -360,7 +360,7 @@ Aero I BLM:
                         icon-key: 'M'
                         counts: 'False'
                         key: 'M'
-                        value-base: '1.6'
+                        value-base: '1'
                         value-scale: '0'
                         indicator: '2D'
                       children:  {}
@@ -423,12 +423,25 @@ Aero I BLM:
                       type: 'mechanic'
                       indicator: '3D'
                       data: 
-                        icon-key: 'StoneIBLMDamage'
+                        icon-key: 'ThunderIBLMDamage'
                         counts: 'True'
                         type: 'Damage'
                         value-base: 'StoneIBLMDamage'
                         value-scale: '0'
                         true: 'False'
-                        classifier: 'WindMagicDamage'
+                        classifier: 'LightningMagicDamage'
+                        indicator: '2D'
+                      children:  {}
+                    Lightning-eb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        damage: 'False'
+                        forward-base: '0'
+                        forward-scale: '0'
+                        right-base: '0'
+                        right-scale: '0'
                         indicator: '2D'
                       children:  {}

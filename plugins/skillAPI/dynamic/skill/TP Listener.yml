@@ -1,0 +1,311 @@
+TP Listener: 
+  name: 'TP Listener'
+  type: 'Jot Trait'
+  max-level: 1
+  skill-req: 'TP'
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '0'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'HOPPER'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+          children: 
+            Passive-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'TPListener'
+                counts: 'False'
+                seconds-base: '0.1'
+                seconds-scale: '0'
+                indicator: '2D'
+              children: 
+                Value-d: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: 'WeaponSkillReady'
+                    key: 'WeaponSkillReady'
+                    min-value-base: '0'
+                    min-value-scale: '0'
+                    max-value-base: '0'
+                    max-value-scale: '0'
+                    indicator: '2D'
+                  children: 
+                    Value-e: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'TP'
+                        key: 'TP'
+                        min-value-base: '1000'
+                        min-value-scale: '0'
+                        max-value-base: '2000'
+                        max-value-scale: '0'
+                        indicator: '2D'
+                      children: 
+                        Nearest-f: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            radius-base: '15'
+                            radius-scale: '0'
+                            group: 'Ally'
+                            wall: 'True'
+                            caster: 'True'
+                            max-base: '999999'
+                            max-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Message-g: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'False'
+                                message: '&3{caster} Weapon Skill Ready! TP: {TP}'
+                                indicator: '2D'
+                              children:  {}
+                        Self-h: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            indicator: '2D'
+                          children: 
+                            Value Set-i: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: 'WeaponSkillReady'
+                                counts: 'False'
+                                key: 'WeaponSkillReady'
+                                value-base: '1'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                Value-j: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: 'WeaponSkillReady'
+                    key: 'WeaponSkillReady'
+                    min-value-base: '0'
+                    min-value-scale: '0'
+                    max-value-base: '1'
+                    max-value-scale: '0'
+                    indicator: '2D'
+                  children: 
+                    Value-k: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'TP'
+                        key: 'TP'
+                        min-value-base: '2000'
+                        min-value-scale: '0'
+                        max-value-base: '3000'
+                        max-value-scale: '0'
+                        indicator: '2D'
+                      children: 
+                        Nearest-l: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            radius-base: '15'
+                            radius-scale: '0'
+                            group: 'Ally'
+                            wall: 'True'
+                            caster: 'True'
+                            max-base: '999999'
+                            max-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Message-m: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                message: '&3{caster} Weapon Skill Ready! TP: {TP}'
+                                indicator: '2D'
+                              children:  {}
+                        Self-n: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            indicator: '2D'
+                          children: 
+                            Value Set-o: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: 'WeaponSkillReady'
+                                counts: 'False'
+                                key: 'WeaponSkillReady'
+                                value-base: '2'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                Value-p: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: 'WeaponSkillReady'
+                    key: 'WeaponSkillReady'
+                    min-value-base: '1'
+                    min-value-scale: '0'
+                    max-value-base: '2'
+                    max-value-scale: '0'
+                    indicator: '2D'
+                  children: 
+                    Value-q: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'TP'
+                        key: 'TP'
+                        min-value-base: '3000'
+                        min-value-scale: '0'
+                        max-value-base: '1e+28'
+                        max-value-scale: '0'
+                        indicator: '2D'
+                      children: 
+                        Nearest-r: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            radius-base: '15'
+                            radius-scale: '0'
+                            group: 'Ally'
+                            wall: 'True'
+                            caster: 'True'
+                            max-base: '999999'
+                            max-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Message-s: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'False'
+                                message: '&3{caster} Weapon Skill Ready! TP: {TP}'
+                                indicator: '2D'
+                              children:  {}
+                        Self-t: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            indicator: '2D'
+                          children: 
+                            Value Set-u: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: 'WeaponSkillReady'
+                                counts: 'False'
+                                key: 'WeaponSkillReady'
+                                value-base: '3'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                Value-v: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: 'WeaponSkillReady'
+                    key: 'WeaponSkillReady'
+                    min-value-base: '3'
+                    min-value-scale: '0'
+                    max-value-base: '3'
+                    max-value-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+                Else-w: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    indicator: '2D'
+                  children: 
+                    Value-x: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'WeaponSkillReady'
+                        key: 'WeaponSkillReady'
+                        min-value-base: '4'
+                        min-value-scale: '0'
+                        max-value-base: '999'
+                        max-value-scale: '0'
+                        indicator: '2D'
+                      children: 
+                        Self-y: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            indicator: '2D'
+                          children: 
+                            Value Set-z: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: 'WeaponSkillReady'
+                                counts: 'False'
+                                key: 'WeaponSkillReady'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Message-ab: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                message: '&3Something Broke {WeaponSkillReady}'
+                                indicator: '2D'
+                              children:  {}

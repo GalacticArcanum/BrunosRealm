@@ -1,0 +1,603 @@
+Blade Ten: 
+  name: 'Blade Ten'
+  type: 'Weapon Skill'
+  max-level: 1
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '0'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&7.'
+  icon: 'IRON_SWORD'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+          children: 
+            Value-c: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: 'WeaponSkillReady'
+                key: 'WeaponSkillReady'
+                min-value-base: '0'
+                min-value-scale: '0'
+                max-value-base: '0'
+                max-value-scale: '0'
+                indicator: '2D'
+              children: 
+                Message-d: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    message: '&3Your Weapon Skill is not ready &6TP&7:&a {TP} &6WSR&7:&a {WeaponSkillReady}'
+                    indicator: '2D'
+                  children:  {}
+                Cancel-e: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    indicator: '2D'
+                  children:  {}
+            Value-f: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: 'WeaponSkillReady'
+                key: 'WeaponSkillReady'
+                min-value-base: '1'
+                min-value-scale: '0'
+                max-value-base: '3'
+                max-value-scale: '0'
+                indicator: '2D'
+              children: 
+                Item-g: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    check-mat: 'False'
+                    check-data: 'False'
+                    check-lore: 'True'
+                    lore: 'Weapon Type: Katana'
+                    check-name: 'False'
+                    regex: 'False'
+                    indicator: '2D'
+                  children: 
+                    Self-h: 
+                      type: 'target'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        indicator: '2D'
+                      children: 
+                        Value Attribute-i: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'False'
+                            key: 'STR'
+                            attribute: 'Strength'
+                            indicator: '2D'
+                          children:  {}
+                        Value Multiply-j: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'STRWSCMOD'
+                            counts: 'False'
+                            key: 'STR'
+                            multiplier-base: '0.4'
+                            multiplier-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Attribute-k: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'False'
+                            key: 'DEX'
+                            attribute: 'Dexterity'
+                            indicator: '2D'
+                          children:  {}
+                        Value Multiply-l: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'DEXWSCMOD'
+                            counts: 'False'
+                            key: 'DEX'
+                            multiplier-base: '0.3'
+                            multiplier-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Lore-m: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'WeaponBaseDamage'
+                            counts: 'False'
+                            key: 'WeaponBaseDamage'
+                            hand: 'Main'
+                            regex: 'Damage: {value}'
+                            multiplier-base: '1'
+                            multiplier-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Add-n: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'STR'
+                            counts: 'False'
+                            key: 'STR'
+                            amount-base: 'WeaponBaseDamage'
+                            amount-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Add-o: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'STR'
+                            counts: 'False'
+                            key: 'STR'
+                            amount-base: '2'
+                            amount-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Add-p: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'False'
+                            key: 'STR'
+                            amount-base: 'DEX'
+                            amount-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Random-q: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'pDIF'
+                            counts: 'False'
+                            key: 'pDIF'
+                            type: 'Triangular'
+                            min-base: '0.5'
+                            min-scale: '0'
+                            max-base: '3.15'
+                            max-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Multiply-r: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'STR'
+                            counts: 'False'
+                            key: 'STR'
+                            multiplier-base: 'pDIF'
+                            multiplier-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Particle Animation-s: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'False'
+                            steps: '1'
+                            frequency: '0.05'
+                            angle: '0'
+                            start: '0'
+                            duration-base: '1.5'
+                            duration-scale: '0'
+                            h-translation-base: '0'
+                            h-translation-scale: '0'
+                            v-translation-base: '0'
+                            v-translation-scale: '0'
+                            h-cycles: '1'
+                            v-cycles: '1'
+                            particle: 'Sweep Attack'
+                            arrangement: 'Circle'
+                            radius-base: '1.5'
+                            radius-scale: '0'
+                            particles-base: '20'
+                            particles-scale: '0'
+                            direction: 'XZ'
+                            visible-radius: '11'
+                            dx: '0'
+                            dy: '0'
+                            dz: '0'
+                            speed: '1'
+                            amount: '1'
+                            forward: '0'
+                            upward: '0'
+                            right: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Potion-t: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'BladeRinCast'
+                            counts: 'False'
+                            potion: 'Slow'
+                            ambient: 'True'
+                            tier-base: '7'
+                            tier-scale: '0'
+                            seconds-base: '0.25'
+                            seconds-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value-u: 
+                          type: 'condition'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'WeaponSkillReady'
+                            key: 'WeaponSkillReady'
+                            min-value-base: '1'
+                            min-value-scale: '0'
+                            max-value-base: '1'
+                            max-value-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Single-v: 
+                              type: 'target'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                range-base: '5'
+                                range-scale: '0'
+                                tolerance-base: '4'
+                                tolerance-scale: '0'
+                                group: 'Enemy'
+                                wall: 'False'
+                                indicator: '2D'
+                              children: 
+                                Sound-w: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    counts: 'False'
+                                    version: '1.9+'
+                                    newsound: 'Entity Player Attack Sweep'
+                                    volume-base: '100'
+                                    volume-scale: '0'
+                                    pitch-base: '1'
+                                    pitch-scale: '0'
+                                    indicator: '2D'
+                                  children:  {}
+                                Value Multiply-x: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    counts: 'False'
+                                    key: 'STR'
+                                    multiplier-base: '4.5'
+                                    multiplier-scale: '0'
+                                    indicator: '2D'
+                                  children:  {}
+                                Damage-y: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    counts: 'True'
+                                    type: 'Damage'
+                                    value-base: 'STR'
+                                    value-scale: '0'
+                                    true: 'False'
+                                    classifier: 'KatanaWeaponSkill'
+                                    indicator: '2D'
+                                  children:  {}
+                                Self-z: 
+                                  type: 'target'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    indicator: '2D'
+                                  children: 
+                                    Value Set-ab: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        counts: 'True'
+                                        key: 'StoredTP'
+                                        value-base: '0'
+                                        value-scale: '0'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Value Set-bb: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        counts: 'True'
+                                        key: 'WeaponSkillReady'
+                                        value-base: '0'
+                                        value-scale: '0'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Flag Clear-cb: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        counts: 'True'
+                                        key: 'WeaponSkillReady'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Value Set-db: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        counts: 'True'
+                                        key: 'TP'
+                                        value-base: '0'
+                                        value-scale: '0'
+                                        indicator: '2D'
+                                      children:  {}
+                        Value-eb: 
+                          type: 'condition'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'WeaponSkillReady'
+                            key: 'WeaponSkillReady'
+                            min-value-base: '2'
+                            min-value-scale: '0'
+                            max-value-base: '2'
+                            max-value-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Single-fb: 
+                              type: 'target'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                range-base: '5'
+                                range-scale: '0'
+                                tolerance-base: '4'
+                                tolerance-scale: '0'
+                                group: 'Enemy'
+                                wall: 'False'
+                                indicator: '2D'
+                              children: 
+                                Sound-gb: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    counts: 'False'
+                                    version: '1.9+'
+                                    newsound: 'Entity Player Attack Sweep'
+                                    volume-base: '100'
+                                    volume-scale: '0'
+                                    pitch-base: '1'
+                                    pitch-scale: '0'
+                                    indicator: '2D'
+                                  children:  {}
+                                Value Multiply-hb: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: 'STR'
+                                    counts: 'False'
+                                    key: 'STR'
+                                    multiplier-base: '11.5'
+                                    multiplier-scale: '0'
+                                    indicator: '2D'
+                                  children:  {}
+                                Damage-ib: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    counts: 'True'
+                                    type: 'Damage'
+                                    value-base: 'STR'
+                                    value-scale: '0'
+                                    true: 'False'
+                                    classifier: 'KatanaWeaponSkill'
+                                    indicator: '2D'
+                                  children:  {}
+                                Self-jb: 
+                                  type: 'target'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    indicator: '2D'
+                                  children: 
+                                    Value Set-kb: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        counts: 'True'
+                                        key: 'StoredTP'
+                                        value-base: '0'
+                                        value-scale: '0'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Value Set-lb: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        counts: 'True'
+                                        key: 'WeaponSkillReady'
+                                        value-base: '0'
+                                        value-scale: '0'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Flag Clear-mb: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        counts: 'True'
+                                        key: 'WeaponSkillReady'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Value Set-nb: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        counts: 'True'
+                                        key: 'TP'
+                                        value-base: '0'
+                                        value-scale: '0'
+                                        indicator: '2D'
+                                      children:  {}
+                        Value-ob: 
+                          type: 'condition'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'WeaponSkillReady'
+                            key: 'WeaponSkillReady'
+                            min-value-base: '3'
+                            min-value-scale: '0'
+                            max-value-base: '3'
+                            max-value-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Single-pb: 
+                              type: 'target'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                range-base: '5'
+                                range-scale: '0'
+                                tolerance-base: '4'
+                                tolerance-scale: '0'
+                                group: 'Enemy'
+                                wall: 'False'
+                                indicator: '2D'
+                              children: 
+                                Sound-qb: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    counts: 'True'
+                                    version: '1.9+'
+                                    newsound: 'Entity Player Attack Sweep'
+                                    volume-base: '100'
+                                    volume-scale: '0'
+                                    pitch-base: '1'
+                                    pitch-scale: '0'
+                                    indicator: '2D'
+                                  children:  {}
+                                Value Multiply-rb: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: 'STR'
+                                    counts: 'False'
+                                    key: 'STR'
+                                    multiplier-base: '15.5'
+                                    multiplier-scale: '0'
+                                    indicator: '2D'
+                                  children:  {}
+                                Damage-sb: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: 'BladeRetsuDamage'
+                                    counts: 'True'
+                                    type: 'Damage'
+                                    value-base: 'STR'
+                                    value-scale: '0'
+                                    true: 'False'
+                                    classifier: 'KatanaWeaponSkill'
+                                    indicator: '2D'
+                                  children:  {}
+                                Self-tb: 
+                                  type: 'target'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    indicator: '2D'
+                                  children: 
+                                    Value Set-ub: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: 'CurrentTP'
+                                        counts: 'True'
+                                        key: 'StoredTP'
+                                        value-base: '0'
+                                        value-scale: '0'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Value Set-vb: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: 'WeaponSkillReady'
+                                        counts: 'True'
+                                        key: 'WeaponSkillReady'
+                                        value-base: '0'
+                                        value-scale: '0'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Flag Clear-wb: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        counts: 'True'
+                                        key: 'WeaponSkillReady'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Value Set-xb: 
+                                      type: 'mechanic'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: 'TP'
+                                        counts: 'True'
+                                        key: 'TP'
+                                        value-base: '0'
+                                        value-scale: '0'
+                                        indicator: '2D'
+                                      children:  {}

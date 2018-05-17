@@ -1,0 +1,116 @@
+Provoke: 
+  name: 'Provoke'
+  type: 'Job Ability'
+  max-level: 1
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    level-base: '5'
+    level-scale: '0'
+    cost-base: '0'
+    cost-scale: '0'
+    cooldown-base: '30'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&3{player} &7has cast &3{skill}&7.'
+  icon: 'LEASH'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&cDamage: {attr:dmg.value}'
+  - ''
+  - '&6Description&7: &3Pulls and goads an enemy into'
+  - '&3attacking you.'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Single-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            range-base: '18'
+            range-scale: '0'
+            tolerance-base: '4'
+            tolerance-scale: '0'
+            group: 'Enemy'
+            wall: 'True'
+            indicator: '2D'
+          children: 
+            Sound-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                version: '1.9+'
+                newsound: 'Entity Shulker Teleport'
+                volume-base: '85'
+                volume-scale: '0'
+                pitch-base: '1'
+                pitch-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Taunt-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                amount-base: '100'
+                amount-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Push-e: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                type: 'Fixed'
+                speed-base: '-0.8'
+                speed-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Delay-f: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                delay-base: '0.3'
+                delay-scale: '0'
+                indicator: '2D'
+              children: 
+                Sound-g: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    version: '1.9+'
+                    newsound: 'Block Anvil Land'
+                    volume-base: '50'
+                    volume-scale: '0'
+                    pitch-base: '1'
+                    pitch-scale: '0'
+                    indicator: '2D'
+                  children:  {}

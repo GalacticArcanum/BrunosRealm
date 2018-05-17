@@ -1,0 +1,1421 @@
+Attack2H: 
+  name: 'Attack2H'
+  type: 'BasicAttack'
+  max-level: 1
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '0'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ARMOR_STAND'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Physical Damage: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'True'
+        type: 'Melee'
+        dmg-min: '0'
+        dmg-max: '1e+27'
+        indicator: '2D'
+      children: 
+        Offhand-b: 
+          type: 'condition'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            check-mat: 'True'
+            material: 'Air'
+            check-data: 'False'
+            check-lore: 'False'
+            check-name: 'False'
+            regex: 'False'
+            indicator: '2D'
+          children: 
+            Item-c: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                check-mat: 'False'
+                check-data: 'False'
+                check-lore: 'True'
+                lore: 'Weapon Type: Great Katana'
+                check-name: 'False'
+                regex: 'False'
+                indicator: '2D'
+              children: 
+                Self-d: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    indicator: '2D'
+                  children: 
+                    Value Lore-e: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'WeaponBaseDamage'
+                        counts: 'False'
+                        key: 'WeaponBaseDamage'
+                        hand: 'Main'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Lore-f: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'OffhandWeaponBaseDamage'
+                        counts: 'False'
+                        key: 'OffhandWeaponBaseDamage'
+                        hand: 'Offhand'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Attribute-g: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'False'
+                        key: 'STR'
+                        attribute: 'Strength'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-h: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'BaseDamage'
+                        counts: 'False'
+                        key: 'BaseDamage'
+                        amount-base: 'OffhandWeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-i: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'fSTR'
+                        counts: 'False'
+                        key: 'fSTR'
+                        amount-base: 'STR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-j: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'BaseDamage'
+                        counts: 'False'
+                        key: 'BaseDamage'
+                        amount-base: 'WeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-k: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'fSTR'
+                        counts: 'False'
+                        key: 'fSTR'
+                        amount-base: '8'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-l: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'fSTR'
+                        counts: 'True'
+                        key: 'fSTR'
+                        multiplier-base: '0.25'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-m: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'BaseDamage'
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'fSTR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Random-n: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'pDIF'
+                        counts: 'False'
+                        key: 'pDIF'
+                        type: 'Triangular'
+                        min-base: '0'
+                        min-scale: '0'
+                        max-base: '3.15'
+                        max-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-o: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'BaseDamage'
+                        counts: 'False'
+                        key: 'BaseDamage'
+                        multiplier-base: 'pDIF'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Set-p: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'PhysicalDamage'
+                        counts: 'False'
+                        key: 'PhysicalDamage'
+                        value-base: 'BaseDamage'
+                        value-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Single-q: 
+                      type: 'target'
+                      indicator: '3D'
+                      data: 
+                        icon-key: 'Attack1HMainTarget'
+                        range-base: '5'
+                        range-scale: '0'
+                        tolerance-base: '4'
+                        tolerance-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        indicator: '2D'
+                      children: 
+                        Damage-r: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'PhysicalDamage'
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: 'PhysicalDamage'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'KatanaBasicAttack'
+                            indicator: '2D'
+                          children:  {}
+                        Delay-s: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'RESETVALUES'
+                            counts: 'False'
+                            delay-base: '0.1'
+                            delay-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Value Set-t: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: 'BaseDamage'
+                                counts: 'True'
+                                key: 'BaseDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-u: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: 'fSTR'
+                                counts: 'True'
+                                key: 'fSTR'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-v: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: 'PhysicalDamage'
+                                counts: 'True'
+                                key: 'PhysicalDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+            Item-w: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                check-mat: 'False'
+                check-data: 'False'
+                check-lore: 'True'
+                lore: 'Weapon Type: Staff'
+                check-name: 'False'
+                regex: 'False'
+                indicator: '2D'
+              children: 
+                Self-x: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    indicator: '2D'
+                  children: 
+                    Value Lore-y: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'WeaponBaseDamage'
+                        hand: 'Main'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Lore-z: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'OffhandWeaponBaseDamage'
+                        hand: 'Offhand'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Attribute-ab: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'STR'
+                        attribute: 'Strength'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-bb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'OffhandWeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-cb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: 'STR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-db: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'WeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-eb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: '8'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-fb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        multiplier-base: '0.25'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-gb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'fSTR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Random-hb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'pDIF'
+                        type: 'Triangular'
+                        min-base: '0'
+                        min-scale: '0'
+                        max-base: '3.15'
+                        max-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-ib: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        multiplier-base: 'pDIF'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Set-jb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'PhysicalDamage'
+                        value-base: 'BaseDamage'
+                        value-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Single-kb: 
+                      type: 'target'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        range-base: '5'
+                        range-scale: '0'
+                        tolerance-base: '4'
+                        tolerance-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        indicator: '2D'
+                      children: 
+                        Damage-lb: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: 'PhysicalDamage'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'KatanaBasicAttack'
+                            indicator: '2D'
+                          children:  {}
+                        Delay-mb: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            delay-base: '0.1'
+                            delay-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Value Set-nb: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'BaseDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-ob: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'fSTR'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-pb: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'PhysicalDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+            Item-qb: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                check-mat: 'False'
+                check-data: 'False'
+                check-lore: 'True'
+                lore: 'Weapon Type: Great Axe'
+                check-name: 'False'
+                regex: 'False'
+                indicator: '2D'
+              children: 
+                Self-rb: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    indicator: '2D'
+                  children: 
+                    Value Lore-sb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'WeaponBaseDamage'
+                        hand: 'Main'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Lore-tb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'OffhandWeaponBaseDamage'
+                        hand: 'Offhand'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Attribute-ub: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'STR'
+                        attribute: 'Strength'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-vb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'OffhandWeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-wb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: 'STR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-xb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'WeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-yb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: '8'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-zb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        multiplier-base: '0.25'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-ac: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'fSTR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Random-bc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'pDIF'
+                        type: 'Triangular'
+                        min-base: '0'
+                        min-scale: '0'
+                        max-base: '3.15'
+                        max-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-cc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        multiplier-base: 'pDIF'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Set-dc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'PhysicalDamage'
+                        value-base: 'BaseDamage'
+                        value-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Single-ec: 
+                      type: 'target'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        range-base: '5'
+                        range-scale: '0'
+                        tolerance-base: '4'
+                        tolerance-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        indicator: '2D'
+                      children: 
+                        Damage-fc: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: 'PhysicalDamage'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'KatanaBasicAttack'
+                            indicator: '2D'
+                          children:  {}
+                        Delay-gc: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            delay-base: '0.1'
+                            delay-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Value Set-hc: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'BaseDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-ic: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'fSTR'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-jc: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'PhysicalDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+            Item-kc: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                check-mat: 'False'
+                check-data: 'False'
+                check-lore: 'True'
+                lore: 'Weapon Type: Great Sword'
+                check-name: 'False'
+                regex: 'False'
+                indicator: '2D'
+              children: 
+                Self-lc: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    indicator: '2D'
+                  children: 
+                    Value Lore-mc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'WeaponBaseDamage'
+                        hand: 'Main'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Lore-nc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'OffhandWeaponBaseDamage'
+                        hand: 'Offhand'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Attribute-oc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'STR'
+                        attribute: 'Strength'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-pc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'OffhandWeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-qc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: 'STR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-rc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'WeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-sc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: '8'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-tc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        multiplier-base: '0.25'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-uc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'fSTR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Random-vc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'pDIF'
+                        type: 'Triangular'
+                        min-base: '0'
+                        min-scale: '0'
+                        max-base: '3.15'
+                        max-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-wc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        multiplier-base: 'pDIF'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Set-xc: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'PhysicalDamage'
+                        value-base: 'BaseDamage'
+                        value-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Single-yc: 
+                      type: 'target'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        range-base: '5'
+                        range-scale: '0'
+                        tolerance-base: '4'
+                        tolerance-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        indicator: '2D'
+                      children: 
+                        Damage-zc: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: 'PhysicalDamage'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'KatanaBasicAttack'
+                            indicator: '2D'
+                          children:  {}
+                        Delay-ad: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            delay-base: '0.1'
+                            delay-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Value Set-bd: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'BaseDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-cd: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'fSTR'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-dd: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'PhysicalDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+            Item-ed: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                check-mat: 'False'
+                check-data: 'False'
+                check-lore: 'True'
+                lore: 'Weapon Type: Polearm'
+                check-name: 'False'
+                regex: 'False'
+                indicator: '2D'
+              children: 
+                Self-fd: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    indicator: '2D'
+                  children: 
+                    Value Lore-gd: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'WeaponBaseDamage'
+                        hand: 'Main'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Lore-hd: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'OffhandWeaponBaseDamage'
+                        hand: 'Offhand'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Attribute-id: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'STR'
+                        attribute: 'Strength'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-jd: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'OffhandWeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-kd: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: 'STR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-ld: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'WeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-md: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: '8'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-nd: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        multiplier-base: '0.25'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-od: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'fSTR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Random-pd: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'pDIF'
+                        type: 'Triangular'
+                        min-base: '0'
+                        min-scale: '0'
+                        max-base: '3.15'
+                        max-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-qd: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        multiplier-base: 'pDIF'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Set-rd: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'PhysicalDamage'
+                        value-base: 'BaseDamage'
+                        value-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Single-sd: 
+                      type: 'target'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        range-base: '5'
+                        range-scale: '0'
+                        tolerance-base: '4'
+                        tolerance-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        indicator: '2D'
+                      children: 
+                        Damage-td: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: 'PhysicalDamage'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'KatanaBasicAttack'
+                            indicator: '2D'
+                          children:  {}
+                        Delay-ud: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            delay-base: '0.1'
+                            delay-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Value Set-vd: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'BaseDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-wd: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'fSTR'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-xd: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'PhysicalDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+            Item-yd: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                check-mat: 'False'
+                check-data: 'False'
+                check-lore: 'True'
+                lore: 'Weapon Type: Scythe'
+                check-name: 'False'
+                regex: 'False'
+                indicator: '2D'
+              children: 
+                Self-zd: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    indicator: '2D'
+                  children: 
+                    Value Lore-ae: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'WeaponBaseDamage'
+                        hand: 'Main'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Lore-be: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'OffhandWeaponBaseDamage'
+                        hand: 'Offhand'
+                        regex: 'Damage: {value}'
+                        multiplier-base: '1'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Attribute-ce: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'STR'
+                        attribute: 'Strength'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-de: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'OffhandWeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-ee: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: 'STR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-fe: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'WeaponBaseDamage'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-ge: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        amount-base: '8'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-he: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'fSTR'
+                        multiplier-base: '0.25'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Add-ie: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        amount-base: 'fSTR'
+                        amount-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Random-je: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'pDIF'
+                        type: 'Triangular'
+                        min-base: '0'
+                        min-scale: '0'
+                        max-base: '3.15'
+                        max-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Multiply-ke: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'BaseDamage'
+                        multiplier-base: 'pDIF'
+                        multiplier-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Value Set-le: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'PhysicalDamage'
+                        value-base: 'BaseDamage'
+                        value-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Single-me: 
+                      type: 'target'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        range-base: '5'
+                        range-scale: '0'
+                        tolerance-base: '4'
+                        tolerance-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        indicator: '2D'
+                      children: 
+                        Damage-ne: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: 'PhysicalDamage'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'KatanaBasicAttack'
+                            indicator: '2D'
+                          children:  {}
+                        Delay-oe: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            delay-base: '0.1'
+                            delay-scale: '0'
+                            indicator: '2D'
+                          children: 
+                            Value Set-pe: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'BaseDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-qe: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'fSTR'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Value Set-re: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                key: 'PhysicalDamage'
+                                value-base: '0'
+                                value-scale: '0'
+                                indicator: '2D'
+                              children:  {}

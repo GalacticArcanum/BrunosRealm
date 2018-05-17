@@ -1,0 +1,365 @@
+Martial Arts I MNK: 
+  name: 'Martial Arts I MNK'
+  type: 'Job Trait'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '10'
+    level-scale: '0'
+    cost-base: '0'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'ARMOR_STAND'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&cDamage: {attr:dmg.value}'
+  - ''
+  - '&3Increases speed of'
+  - '&3hand to hand attacks.'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+          children: 
+            Skill Level-c: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                skill: 'Martial Arts IX'
+                min-level: '1'
+                max-level: '99'
+                indicator: '2D'
+              children: 
+                Passive-d: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    seconds-base: '1'
+                    seconds-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+                Else-e: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    indicator: '2D'
+                  children: 
+                    Skill Level-f: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        skill: 'Martial Arts VIII'
+                        min-level: '1'
+                        max-level: '99'
+                        indicator: '2D'
+                      children: 
+                        Value Set-g: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'HandToHandDelay'
+                            counts: 'False'
+                            key: 'HandToHandDelay'
+                            value-base: '270'
+                            value-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Else-h: 
+                          type: 'condition'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            indicator: '2D'
+                          children: 
+                            Skill Level-i: 
+                              type: 'condition'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                skill: 'Martial Arts VIII'
+                                min-level: '1'
+                                max-level: '99'
+                                indicator: '2D'
+                              children: 
+                                Value Set-j: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    counts: 'True'
+                                    key: 'HandToHandDelay'
+                                    value-base: '275'
+                                    value-scale: '0'
+                                    indicator: '2D'
+                                  children:  {}
+                                Else-k: 
+                                  type: 'condition'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: ''
+                                    indicator: '2D'
+                                  children: 
+                                    Skill Level-l: 
+                                      type: 'condition'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        skill: 'Martial Arts VII'
+                                        min-level: '1'
+                                        max-level: '99'
+                                        indicator: '2D'
+                                      children:  {}
+                                    Else-m: 
+                                      type: 'condition'
+                                      indicator: '3D'
+                                      data: 
+                                        icon-key: ''
+                                        indicator: '2D'
+                                      children: 
+                                        Skill Level-n: 
+                                          type: 'condition'
+                                          indicator: '3D'
+                                          data: 
+                                            icon-key: ''
+                                            skill: 'Martial Arts VI'
+                                            min-level: '1'
+                                            max-level: '99'
+                                            indicator: '2D'
+                                          children: 
+                                            Value Set-o: 
+                                              type: 'mechanic'
+                                              indicator: '3D'
+                                              data: 
+                                                icon-key: 'HandToHandDelay'
+                                                counts: 'False'
+                                                key: 'HandToHandDelay'
+                                                value-base: '300'
+                                                value-scale: '0'
+                                                indicator: '2D'
+                                              children:  {}
+                                        Else-p: 
+                                          type: 'condition'
+                                          indicator: '3D'
+                                          data: 
+                                            icon-key: ''
+                                            indicator: '2D'
+                                          children: 
+                                            Skill Level-q: 
+                                              type: 'condition'
+                                              indicator: '3D'
+                                              data: 
+                                                icon-key: ''
+                                                skill: 'Martial Arts V'
+                                                min-level: '1'
+                                                max-level: '99'
+                                                indicator: '2D'
+                                              children: 
+                                                Value Set-r: 
+                                                  type: 'mechanic'
+                                                  indicator: '3D'
+                                                  data: 
+                                                    icon-key: 'HandToHandDelay'
+                                                    counts: 'False'
+                                                    key: 'HandToHandDelay'
+                                                    value-base: '320'
+                                                    value-scale: '0'
+                                                    indicator: '2D'
+                                                  children:  {}
+                                            Else-s: 
+                                              type: 'condition'
+                                              indicator: '3D'
+                                              data: 
+                                                icon-key: ''
+                                                indicator: '2D'
+                                              children: 
+                                                Skill Level-t: 
+                                                  type: 'condition'
+                                                  indicator: '3D'
+                                                  data: 
+                                                    icon-key: ''
+                                                    skill: 'Martial Arts IV'
+                                                    min-level: '1'
+                                                    max-level: '99'
+                                                    indicator: '2D'
+                                                  children: 
+                                                    Value Set-u: 
+                                                      type: 'mechanic'
+                                                      indicator: '3D'
+                                                      data: 
+                                                        icon-key: 'HandToHandDelay'
+                                                        counts: 'False'
+                                                        key: 'HandToHandDelay'
+                                                        value-base: '340'
+                                                        value-scale: '0'
+                                                        indicator: '2D'
+                                                      children:  {}
+                                                Else-v: 
+                                                  type: 'condition'
+                                                  indicator: '3D'
+                                                  data: 
+                                                    icon-key: ''
+                                                    indicator: '2D'
+                                                  children: 
+                                                    Skill Level-w: 
+                                                      type: 'condition'
+                                                      indicator: '3D'
+                                                      data: 
+                                                        icon-key: ''
+                                                        skill: 'Martial Arts III'
+                                                        min-level: '1'
+                                                        max-level: '99'
+                                                        indicator: '2D'
+                                                      children: 
+                                                        Value Set-x: 
+                                                          type: 'mechanic'
+                                                          indicator: '3D'
+                                                          data: 
+                                                            icon-key: 'HandToHandDelay'
+                                                            counts: 'False'
+                                                            key: 'HandToHandDelay'
+                                                            value-base: '360'
+                                                            value-scale: '0'
+                                                            indicator: '2D'
+                                                          children:  {}
+                                                    Else-y: 
+                                                      type: 'condition'
+                                                      indicator: '3D'
+                                                      data: 
+                                                        icon-key: ''
+                                                        indicator: '2D'
+                                                      children: 
+                                                        Skill Level-z: 
+                                                          type: 'condition'
+                                                          indicator: '3D'
+                                                          data: 
+                                                            icon-key: ''
+                                                            skill: 'Martial Arts II'
+                                                            min-level: '1'
+                                                            max-level: '99'
+                                                            indicator: '2D'
+                                                          children: 
+                                                            Value Set-ab: 
+                                                              type: 'mechanic'
+                                                              indicator: '3D'
+                                                              data: 
+                                                                icon-key: 'HandToHandDelay'
+                                                                counts: 'False'
+                                                                key: 'HandToHandDelay'
+                                                                value-base: '380'
+                                                                value-scale: '0'
+                                                                indicator: '2D'
+                                                              children:  {}
+                                                        Else-bb: 
+                                                          type: 'condition'
+                                                          indicator: '3D'
+                                                          data: 
+                                                            icon-key: ''
+                                                            indicator: '2D'
+                                                          children: 
+                                                            Skill Level-cb: 
+                                                              type: 'condition'
+                                                              indicator: '3D'
+                                                              data: 
+                                                                icon-key: ''
+                                                                skill: 'Martial Arts I'
+                                                                min-level: '1'
+                                                                max-level: '99'
+                                                                indicator: '2D'
+                                                              children: 
+                                                                Value Set-db: 
+                                                                  type: 'mechanic'
+                                                                  indicator: '3D'
+                                                                  data: 
+                                                                    icon-key: 'HandToHandDelay'
+                                                                    counts: 'False'
+                                                                    key: 'HandToHandDelay'
+                                                                    value-base: '400'
+                                                                    value-scale: '0'
+                                                                    indicator: '2D'
+                                                                  children:  {}
+                                                            Else-eb: 
+                                                              type: 'condition'
+                                                              indicator: '3D'
+                                                              data: 
+                                                                icon-key: ''
+                                                                indicator: '2D'
+                                                              children:  {}
+                                                        Else-fb: 
+                                                          type: 'condition'
+                                                          indicator: '3D'
+                                                          data: 
+                                                            icon-key: ''
+                                                            indicator: '2D'
+                                                          children: 
+                                                            Skill Level-gb: 
+                                                              type: 'condition'
+                                                              indicator: '3D'
+                                                              data: 
+                                                                icon-key: ''
+                                                                skill: 'Martial Arts I'
+                                                                min-level: '1'
+                                                                max-level: '99'
+                                                                indicator: '2D'
+                                                              children: 
+                                                                Value Set-hb: 
+                                                                  type: 'mechanic'
+                                                                  indicator: '3D'
+                                                                  data: 
+                                                                    icon-key: ''
+                                                                    counts: 'True'
+                                                                    key: 'HandToHandDelay'
+                                                                    value-base: '400'
+                                                                    value-scale: '0'
+                                                                    indicator: '2D'
+                                                                  children:  {}
+                                                            Else-ib: 
+                                                              type: 'condition'
+                                                              indicator: '3D'
+                                                              data: 
+                                                                icon-key: ''
+                                                                indicator: '2D'
+                                                              children:  {}
+                                Value Set-jb: 
+                                  type: 'mechanic'
+                                  indicator: '3D'
+                                  data: 
+                                    icon-key: 'HandToHandDelay'
+                                    counts: 'False'
+                                    key: 'HandToHandDelay'
+                                    value-base: '480'
+                                    value-scale: '0'
+                                    indicator: '2D'
+                                  children:  {}

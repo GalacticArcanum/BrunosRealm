@@ -1,0 +1,459 @@
+Poison I DRK: 
+  name: 'Poison I DRK'
+  type: 'Enfeebling Magic Spell'
+  max-level: 1
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    level-base: '6'
+    level-scale: '0'
+    cost-base: '0'
+    cost-scale: '0'
+    cooldown-base: '5'
+    cooldown-scale: '0'
+    mana-base: '7'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&7.'
+  icon: 'SPLASH_POTION'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&cDamage: {attr:dmg.value}'
+  - ''
+  - '&7Does Earth Elemental'
+  - '&7damage to an enemy.'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                potion: 'Slow'
+                ambient: 'True'
+                tier-base: '7'
+                tier-scale: '0'
+                seconds-base: '1'
+                seconds-scale: '0'
+                indicator: '2D'
+              children:  {}
+        Single-d: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            range-base: '20'
+            range-scale: '0'
+            tolerance-base: '4'
+            tolerance-scale: '0'
+            group: 'Enemy'
+            wall: 'False'
+            indicator: '2D'
+          children: 
+            Value Set-e: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'MB'
+                counts: 'False'
+                key: 'MB'
+                value-base: '1'
+                value-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Value Set-f: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'Biome'
+                counts: 'False'
+                key: 'Biome'
+                value-base: '1'
+                value-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Biome-g: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'In Biome'
+                biome: '65795'
+                indicator: '2D'
+              children: 
+                Value Set-h: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: 'Biome'
+                    counts: 'False'
+                    key: 'Biome'
+                    value-base: '1.1'
+                    value-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+            Biome-i: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'In Biome'
+                biome: '131616'
+                indicator: '2D'
+              children: 
+                Value Set-j: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    key: 'Biome'
+                    value-base: '0.9'
+                    value-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+            Biome-k: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Not In Biome'
+                biome: '197411'
+                indicator: '2D'
+              children: 
+                Value Set-l: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    key: 'Biome'
+                    value-base: '1'
+                    value-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+            Flag-m: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Not Set'
+                key: 'PoisonI'
+                indicator: '2D'
+              children: 
+                Sound-n: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    version: '1.9+'
+                    newsound: 'Entity Splash Potion Throw'
+                    volume-base: '100'
+                    volume-scale: '0'
+                    pitch-base: '1'
+                    pitch-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+                Delay-o: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    delay-base: '0.75'
+                    delay-scale: '0'
+                    indicator: '2D'
+                  children: 
+                    Particle Projectile-p: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'False'
+                        group: 'Enemy'
+                        spread: 'Rain'
+                        amount-base: '1'
+                        amount-scale: '0'
+                        velocity-base: '-0.4'
+                        velocity-scale: '0'
+                        height-base: '1'
+                        height-scale: '0'
+                        rain-radius-base: '2'
+                        rain-radius-scale: '0'
+                        forward-base: '0'
+                        forward-scale: '0'
+                        upward-base: '0'
+                        upward-scale: '0'
+                        right-base: '0'
+                        right-scale: '0'
+                        gravity: '0'
+                        pierce: 'False'
+                        particle: 'Explode'
+                        arrangement: 'Sphere'
+                        radius-base: '2'
+                        radius-scale: '0'
+                        particles-base: '1'
+                        particles-scale: '0'
+                        visible-radius: '25'
+                        dx: '0'
+                        dy: '0'
+                        dz: '0'
+                        speed: '1'
+                        amount: '1'
+                        frequency: '0.05'
+                        lifespan: '10'
+                        use-effect: 'True'
+                        effect-key: 'default'
+                        duration-base: '1'
+                        duration-scale: '0'
+                        -shape: 'hexagon'
+                        -shape-dir: 'XY'
+                        -shape-size: '1'
+                        -animation: 'circle'
+                        -anim-dir: 'XZ'
+                        -anim-size: '1'
+                        -interval: '1'
+                        -view-range: '25'
+                        -particle-type: 'EXPLOSION_NORMAL'
+                        -particle-material: 'Nether Star'
+                        -particle-data: '0'
+                        -particle-amount: '0'
+                        -particle-dx: '0'
+                        -particle-dy: '0'
+                        -particle-dz: '0'
+                        -particle-speed: '1'
+                        indicator: '2D'
+                      children: 
+                        Particle Animation-q: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            steps: '1'
+                            frequency: '0.05'
+                            angle: '0'
+                            start: '0'
+                            duration-base: '0.5'
+                            duration-scale: '0'
+                            h-translation-base: '2'
+                            h-translation-scale: '0'
+                            v-translation-base: '2'
+                            v-translation-scale: '0'
+                            h-cycles: '1'
+                            v-cycles: '1'
+                            particle: 'Instant Spell'
+                            arrangement: 'Circle'
+                            radius-base: '2'
+                            radius-scale: '0'
+                            particles-base: '20'
+                            particles-scale: '0'
+                            direction: 'XZ'
+                            visible-radius: '25'
+                            dx: '0'
+                            dy: '0'
+                            dz: '0'
+                            speed: '1'
+                            amount: '1'
+                            forward: '0'
+                            upward: '0'
+                            right: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Attribute-r: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'False'
+                            key: 'INT'
+                            attribute: 'Intelligence'
+                            indicator: '2D'
+                          children:  {}
+                        Value Set-s: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'V'
+                            counts: 'False'
+                            key: 'V'
+                            value-base: '10'
+                            value-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Set-t: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'M'
+                            counts: 'False'
+                            key: 'M'
+                            value-base: '2'
+                            value-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Set-u: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'StoneIBLMDamage=dINT'
+                            counts: 'False'
+                            key: 'StoneIBLMDamage'
+                            value-base: 'INT'
+                            value-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Multiply-v: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'StoneIBLMDamage*M'
+                            counts: 'False'
+                            key: 'StoneIBLMDamage'
+                            multiplier-base: 'M'
+                            multiplier-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Add-w: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'StoneIBLMDamage+V'
+                            counts: 'False'
+                            key: 'StoneIBLMDamage'
+                            amount-base: 'V'
+                            amount-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Multiply-x: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'StoneIBLMDamage*Biome'
+                            counts: 'False'
+                            key: 'StoneIBLMDamage'
+                            multiplier-base: 'Biome'
+                            multiplier-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Value Multiply-y: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'StoneIBLMDamage*MB'
+                            counts: 'False'
+                            key: 'StoneIBLMDamage'
+                            multiplier-base: 'MB'
+                            multiplier-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Flag-z: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: 'DiaIRDM'
+                            counts: 'True'
+                            key: 'DiaIRDM'
+                            seconds-base: '60'
+                            seconds-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Repeat-ab: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            repetitions-base: '30'
+                            repetitions-scale: '0'
+                            period: '3'
+                            delay: '0'
+                            indicator: '2D'
+                          children: 
+                            Sound-bb: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'False'
+                                version: '1.9+'
+                                newsound: 'Entity Player Burp'
+                                volume-base: '100'
+                                volume-scale: '0'
+                                pitch-base: '1'
+                                pitch-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Damage-cb: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: 'PoisonIBLMDamage'
+                                counts: 'True'
+                                type: 'Damage'
+                                value-base: '1'
+                                value-scale: '0'
+                                true: 'False'
+                                classifier: 'WaterMagicDamage'
+                                indicator: '2D'
+                              children:  {}
+            Flag-db: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'PoisonI'
+                indicator: '2D'
+              children: 
+                Self-eb: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    indicator: '2D'
+                  children: 
+                    Message-fb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        message: '&3Target already has Poison I effect.'
+                        indicator: '2D'
+                      children:  {}
+                    Cancel-gb: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        indicator: '2D'
+                      children:  {}
