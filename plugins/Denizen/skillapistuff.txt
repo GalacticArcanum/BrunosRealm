@@ -1,0 +1,189 @@
+#SkillAPI Denizen Stuff
+
+#EVENTS:
+
+on skillapi player downgrades skill (in <area>):
+on skillapi player downgrades <skill> (in <area>):
+#Triggers	when a player downgrades a skill in SkillAPI. 
+#Context	<context.level> returns the level the player went down to. 
+#<context.refund> returns how much the the player was refunded. 
+#<context.skill_name> returns the name of the skill downgraded. 
+#Determine	None 
+
+on skillapi player levels up (in <area>): 
+#Triggers	when a player levels up in SkillAPI. 
+#Context	<context.level> returns the level the player went up to. 
+#<context.gained> returns how many levels the player gained. 
+#<context.class> returns the SkillAPIClass the player is leveling up in. 
+#Determine	None 
+
+on skillapi player unlocks skill (in <area>):
+on skillapi player unlocks <skill> (in <area>):
+#Triggers	when a player unlocks a skill in SkillAPI. 
+#Context	<context.skill_name> returns the name of the skill unlocked. 
+#Determine	None 
+
+on skillapi player upgrades skill (in <area>):
+on skillapi player upgrades <skill> (in <area>):
+#Triggers	when a player upgrades a skill in SkillAPI. 
+#Context	<context.level> returns the level the player went up to. 
+#<context.cost> returns how much the upgrade cost. 
+#<context.skill_name> returns the name of the skill upgraded. 
+#Determine	None 
+
+#TAGS:
+
+Name	<p@player.skillapi.main_class>
+Returns	SkillAPIClass
+Description	Returns the player's main SkillAPI class. 
+
+Name	<p@player.skillapi.in_class[<class>]>
+Returns	Element(Boolean)
+Description	Returns whether the player professes in the specified class. If none is specified, returns 
+whether the player professes in any class. 
+
+Name	<p@player.skillapi.has_skill[<skill>]>
+Returns	Element(Boolean)
+Description	Returns whether the player has the specified skill. 
+
+Name	<p@player.skillapi.mana>
+Returns	Element(Decimal)
+Description	Returns the player's current amount of mana. 
+
+Name	<p@player.skillapi.max_mana>
+Returns	Element(Decimal)
+Description	Returns the player's maximum amount of mana. 
+
+Name	<p@player.skillapi.class_exp[<class>]>
+Returns	Element(Decimal)
+Description	Returns the amount of experience the player has toward the next level in the specified class.
+ 
+Name	<p@player.skillapi.class_required_exp[<class>]>
+Returns	Element(Decimal)
+Description	Returns the amount of experience the player must receive to get to the next level 
+
+in the specified class. 
+Name	<p@player.skillapi.class_total_exp[<class>]>
+Returns	Element(Decimal)
+Description	Returns the total amount of experience the player has in the specified class. 
+
+Name	<p@player.skillapi.class_level[<class>]>
+Returns	Element(Number)
+Description	Returns the level the player is in the specified class. 
+
+Name	<p@player.skillapi.class_points[<class>]>
+Returns	Element(Number)
+Description	Returns the number of skill points the player has in the specified class. 
+
+Name	<p@player.skillapi.class_maxed[<class>]>
+Returns	Element(Boolean)
+Description	Returns whether the player has hit maximum level in the specified class. 
+
+Name	<p@player.skillapi.class_health[<class>]>
+Returns	Element(Decimal)
+Description	Returns the amount of health the player gets from the specified class. 
+
+Name	<p@player.skillapi.class_mana[<class>]>
+Returns	Element(Decimal)
+Description	Returns the amount of mana the player gets from the specified class. 
+
+Name	<p@player.skillapi.skill_bind[<skill>]>
+Returns	dMaterial
+Description	Returns the material this skill is currently bound to. 
+
+Name	<p@player.skillapi.skill_level_requirement[<skill>]>
+Returns	Element(Number)
+Description	Returns the level the player must be to level up the specified skill. 
+
+Name	<p@player.skillapi.skill_level[<skill>]>
+Returns	Element(Number)
+Description	Returns the level the player is in the specified skill. 
+
+Name	<p@player.skillapi.skill_points[<skill>]>
+Returns	Element(Number)
+Description	Returns how many skill points the player has invested in the specified skill. 
+
+Name	<p@player.skillapi.skill_cost[<skill>]>
+Returns	Element(Number)
+Description	Returns the cost the for the player to level up the specified skill. 
+
+Name	<p@player.skillapi.skill_on_cooldown[<skill>]>
+Returns	Element(Boolean)
+Description	Returns whether the specified skill is currently on cooldown for the player. 
+
+Name	<p@player.skillapi.skill_cooldown[<skill>]>
+Returns	Duration
+Description	Returns the remaining cooldown the player has in the specified skill. 
+
+Name	<p@player.skillapi.skill_maxed[<skill>]>
+Returns	Element(Boolean)
+Description	Returns whether the player has reached max level in the specified skill. 
+
+Name	<p@player.skillapi.skill_status[<skill>]>
+Returns	Element
+Description	Returns the player's current status for the specified skill. 
+Can be: ON_COOLDOWN, MISSING_MANA, or READY 
+
+Name	<skillapiclass@class.name>
+Returns	Element
+Description	Returns the name of this SkillAPI class. 
+
+Name	<skillapiclass@class.prefix_color>
+Returns	Element
+Description	Returns the color of the prefix of this SkillAPI class. 
+
+Name	<skillapiclass@class.prefix>
+Returns	Element
+Description	Returns the prefix of this SkillAPI class. 
+
+Name	<skillapiclass@class.needs_permission>
+Returns	Element(Boolean)
+Description	Returns whether this SkillAPI class requires permission to profess as it. 
+
+Name	<skillapiclass@class.group.name>
+Returns	Element
+Description	Returns the name of the group that this SkillAPI class falls into. 
+
+Name	<skillapiclass@class.has_parent>
+Returns	Element(Boolean)
+Description	Returns the whether this SkillAPI class has a parent class. 
+
+Name	<skillapiclass@class.parent>
+Returns	SkillAPIClass
+Description	Returns the parent class of this SkillAPI class. 
+
+Name	<skillapiclass@class.icon>
+Returns	dItem
+Description	Returns the item icon representing this SkillAPI class in menus. 
+
+Name	<skillapiclass@class.max_level>
+Returns	Element(Decimal)
+Description	Returns the maximum level that this SkillAPI class can reach. 
+
+Name	<skillapiclass@class.base_health>
+Returns	Element(Decimal)
+Description	Returns the base amount of health for this SkillAPI class. 
+
+Name	<skillapiclass@class.health_scale>
+Returns	Element(Decimal)
+Description	Returns the amount of health gained per level for this SkillAPI class. 
+
+Name	<skillapiclass@class.base_mana>
+Returns	Element(Decimal)
+Description	Returns the base amount of mana for this SkillAPI class. 
+
+Name	<skillapiclass@class.mana_scale>
+Returns	Element(Decimal)
+Description	Returns the amount of mana gained per level for this SkillAPI class. 
+
+Name	<skillapiclass@class.mana_name>
+Returns	Element
+Description	Returns the alias for mana that this SkillAPI class uses. 
+
+Name	<skillapiclass@class.has_mana_regen>
+Returns	Element(Boolean)
+Description	Returns whether this SkillAPI class has mana regeneration. 
+
+Name	<skillapiclass@class.mana_regen>
+Returns	Element(Decimal)
+Description	Returns the amount of mana regeneration that this SkillAPI class has. 
