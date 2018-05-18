@@ -1,8 +1,0 @@
-FireCrystal:
-  type: item
-  debug: false
-  material: i@quartz
-  display name: '<&f>Fire Crystal'
-  lore: 
-  - '<&b>A crystal infused with fire energy.' 
-  shapeless_recipe: i@quartz|i@blaze_powder
