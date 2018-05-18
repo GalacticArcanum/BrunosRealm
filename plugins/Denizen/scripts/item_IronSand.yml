@@ -1,7 +1,0 @@
-IronSand:
-  type: item
-  debug: false
-  material: i@light_gray_dye
-  display name: '<&f>Handful of Iron Sand'
-  lore: 
-  - '<&b>Iron dust is mixed in with this sand.'
