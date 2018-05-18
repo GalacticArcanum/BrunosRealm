@@ -1,9 +1,0 @@
-BundlingTwine:
-  type: item
-  debug: false
-  material: i@string
-  display name: '<&f>Bundling Twine'
-  lore: 
-  - '<&b>A spool of bundling twine used'
-  - '<&b>by members of the Carpenters Guild'
-  - '<&b>to bundle logs together.'
