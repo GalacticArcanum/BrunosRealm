@@ -1,8 +1,0 @@
-BeehiveChip:
-  type: item
-  debug: false
-  material: i@gold_nugget
-  display name: '<&f>Beehive Chip'
-  lore: 
-  - '<&b>Part of a beehive formed by'
-  - '<&b>hardened bee secretions.' 
