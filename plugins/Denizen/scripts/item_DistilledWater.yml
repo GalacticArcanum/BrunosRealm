@@ -1,9 +1,0 @@
-DistilledWater:
-  type: item
-  debug: false
-  material: i@potion
-  display name: '<&f>Distilled Water'
-  lore: 
-  - '<&b>This water has been purified'
-  - '<&b>by a distillation process.' 
-  shapeless_recipe: i@lightningcrystal|i@potion|i@cactus
