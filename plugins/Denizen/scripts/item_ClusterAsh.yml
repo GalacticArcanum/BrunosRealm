@@ -1,7 +1,0 @@
-ClusterAsh:
-  type: item
-  debug: false
-  material: i@gray_dye
-  display name: '<&f>Pinch of Cluster Ash'
-  lore: 
-  - '<&b>The burnt remains of a cluster bomb.'
