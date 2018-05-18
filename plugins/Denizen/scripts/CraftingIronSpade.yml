@@ -1,7 +1,0 @@
-CraftingIronSpade:
-  type: world
-  debug: false
-  events:
-    on player crafts Iron_Spade:
-    - narrate "<&3>You crafted a <&6>Ash Club!"
-    - determine i@AshClub
