@@ -1,7 +1,0 @@
-#/ex note cu@-7201,82,-9,world|-7199,86,-6,world as:chocolate_floor_entry
-wonkafactory:
-    type: world
-    debug: false
-    events:
-        on player enters chocolate_floor_entry:
-        - execute as_op 'warp Chocolate_Floor <player.name>'
