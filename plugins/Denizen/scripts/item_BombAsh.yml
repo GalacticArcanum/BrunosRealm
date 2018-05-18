@@ -1,7 +1,0 @@
-BombAsh:
-  type: item
-  debug: false
-  material: i@gray_dye
-  display name: '<&f>Pinch of Bomb Ash'
-  lore: 
-  - '<&b>The burnt remains of a bomb.'
