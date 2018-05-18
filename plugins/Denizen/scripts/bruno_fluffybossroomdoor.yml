@@ -1,8 +1,0 @@
-fluffybossroomdoor:
-    type: world
-    debug: false
-    events:
-        on player exits fluffybossroomdoor:
-        - narrate "The door shuts quickly behind you."
-        - wait 1t
-        - modifyblock cu@fluffybossroomdoor m@98,1
