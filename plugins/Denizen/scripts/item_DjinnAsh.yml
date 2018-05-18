@@ -1,7 +1,0 @@
-DjinnAsh:
-  type: item
-  debug: false
-  material: i@gray_dye
-  display name: '<&f>Pinch of Djinn Ash'
-  lore: 
-  - '<&b>The burnt remains of a djinn.'
