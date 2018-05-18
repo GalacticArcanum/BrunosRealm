@@ -1,7 +1,0 @@
-CraftingIronSword:
-  type: world
-  debug: false
-  events:
-    on player crafts Iron_Sword:
-    - narrate "<&3>You crafted a <&6>Bronze Sword!"
-    - determine i@BronzeSword
