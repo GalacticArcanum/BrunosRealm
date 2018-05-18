@@ -1,7 +1,0 @@
-CraftingAxe:
-  type: world
-  debug: false
-  events:
-    on player crafts iron_axe:
-    - narrate "<&3>You crafted a <&6>Bronze Axe!"
-    - determine i@BronzeAxe
