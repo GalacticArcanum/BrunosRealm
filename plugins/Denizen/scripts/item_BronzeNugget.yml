@@ -1,8 +1,0 @@
-BronzeNugget:
-  type: item
-  debug: false
-  material: i@iron_nugget
-  display name: '<&f>Bronze Nugget'
-  no_id: true
-  lore: 
-  - '<&b>A chunk of impure bronze.'
