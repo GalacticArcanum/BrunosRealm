@@ -1,7 +1,0 @@
-BatFang:
-  type: item
-  debug: false
-  material: i@bone_block
-  display name: '<&f>Bat Fant'
-  lore: 
-  - '<&b>A small bat fang.'
