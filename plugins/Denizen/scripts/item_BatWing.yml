@@ -1,7 +1,0 @@
-BatWing:
-  type: item
-  debug: false
-  material: i@rotten_flesh
-  display name: '<&f>Bat Wing'
-  lore: 
-  - '<&b>A thin, black wing.'
