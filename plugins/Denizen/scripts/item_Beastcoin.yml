@@ -1,8 +1,0 @@
-Beastcoin:
-  type: item
-  debug: false
-  material: i@gold_nugget
-  display name: '<&f>Beastcoin'
-  lore: 
-  - '<&b>The Yagudo mint this bronze currency.'
-  - '<&b>Widely used among beastmen.'
