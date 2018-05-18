@@ -1,7 +1,0 @@
-ChocoboFeather:
-  type: item
-  debug: false
-  material: i@feather
-  display name: '<&f>Chocobo Feather'
-  lore: 
-  - '<&b>A chocobo tail feather.'
