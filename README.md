@@ -10,4 +10,4 @@ Or click the book icon tab above labeled "Wiki".
 # Server Details
 * Dedicated CPU located in Atlanta GA
 * 16 GB RAM
-* $70 USD / Month
+* $75 USD / Month
